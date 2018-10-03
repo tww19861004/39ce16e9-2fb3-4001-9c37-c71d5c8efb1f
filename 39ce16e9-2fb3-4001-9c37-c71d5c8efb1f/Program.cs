@@ -18,10 +18,7 @@ namespace _39ce16e9_2fb3_4001_9c37_c71d5c8efb1f
             Thread.Sleep(5000);
 
             //1000000000这个数字会抛出System.AggregateException
-            Func<int, Int32> function = r => Sum(r);
-            Func<Int32> functio2 = () => Sum();
-            Func<object, Int32> function1 = r => Sum((Int32)r);
-            Task<Int32> t = new Task<Int32>(function1, 1000000000);
+            Task<Int32> t = new Task<Int32>(r => Sum((Int32)r), 1000000000);
             //可以现在开始，也可以以后开始 
             t.Start();
             //Wait显式的等待一个线程完成

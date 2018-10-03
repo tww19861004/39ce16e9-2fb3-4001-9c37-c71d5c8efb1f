@@ -13,6 +13,9 @@ namespace Action1
             Test<string>(Action, "Hello World!");
             Test<int>(Action, 1000);
             Test<string>(p => { Console.WriteLine("{0}", p); }, "Hello World");//使用Lambda表达式定义委托
+
+
+
             Console.ReadKey();
         }
 
