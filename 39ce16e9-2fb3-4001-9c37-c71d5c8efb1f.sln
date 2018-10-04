@@ -23,6 +23,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoResetEvent1", "AutoRese
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AsyncAwait", "AsyncAwait", "{06D00F21-AA95-4DDB-A107-6F1F81EF9E2F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseDiagramDesignTools", "DatabaseDiagramDesignTools", "{E58BB311-1C73-48E9-83B1-6988185AD6F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest", "UnitTest", "{A6986692-AEEC-42D0-B95F-0F05C6BE8398}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestingDemo", "UnitTestingDemo\UnitTestingDemo.csproj", "{4FECCC3B-871D-43C0-AA57-7393E6989F72}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +63,10 @@ Global
 		{873EE75B-B8D4-40DD-A6DD-5697051D25B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{873EE75B-B8D4-40DD-A6DD-5697051D25B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{873EE75B-B8D4-40DD-A6DD-5697051D25B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FECCC3B-871D-43C0-AA57-7393E6989F72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FECCC3B-871D-43C0-AA57-7393E6989F72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FECCC3B-871D-43C0-AA57-7393E6989F72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FECCC3B-871D-43C0-AA57-7393E6989F72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +79,7 @@ Global
 		{D4282D1D-20F2-43F7-9C32-6DFFFA0C2787} = {43B83923-4CDD-487B-B5A7-FD7A0C16684B}
 		{67498844-95ED-4A7F-B85E-7738C7915554} = {43B83923-4CDD-487B-B5A7-FD7A0C16684B}
 		{873EE75B-B8D4-40DD-A6DD-5697051D25B5} = {43B83923-4CDD-487B-B5A7-FD7A0C16684B}
+		{4FECCC3B-871D-43C0-AA57-7393E6989F72} = {A6986692-AEEC-42D0-B95F-0F05C6BE8398}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {10FE627A-527C-4B00-A14E-FCEF6F4C6835}
