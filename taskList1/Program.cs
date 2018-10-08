@@ -10,17 +10,22 @@ namespace taskList1
     {
         static void Main(string[] args)
         {
-            List<int> lst = new List<int>() { 1,3,4,6,7};
+            if(System.IO.File.Exists(@"D:\Project\1.txt"))
+            {
+                System.IO.File.Delete(@"D:\Project\1.txt");
+            }
+            List<int> lst = new List<int>() { 1,2,3,4,5,6,7};
             foreach(var item in lst)
             {
                 Task task = new Task(n => test((int)n), item);
                 task.Start();
                 task.ContinueWith(n =>
-                {                    
+                {                             
                     System.IO.File.AppendAllText(@"D:\Project\1.txt", n.Exception?.InnerException?.Message+"\r\n");
                     //n.Dispose();
                 }, TaskContinuationOptions.OnlyOnFaulted);
-                System.Threading.Thread.Sleep(500);
+                //防止多线程操作文件报错
+                System.Threading.Thread.Sleep(150);
             }
 
             //if (listTask.IsNotEmpty())
@@ -46,7 +51,7 @@ namespace taskList1
             //    }
             //}
 
-            Console.ReadKey();
+            //Console.ReadKey();
         }
 
         static void test(int obj)
