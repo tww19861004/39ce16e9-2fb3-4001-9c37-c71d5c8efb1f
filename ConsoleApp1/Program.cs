@@ -20,7 +20,7 @@ namespace ConsoleApp1
                 //hc.DefaultRequestHeaders.Add("Connection", "Close");
 
                 List<Task<string>> list = new List<Task<string>>();
-                for(int i=0;i<3;i++)
+                for(int i=0;i<2;i++)
                 {
                     Task<string> task = new Task<string>(() =>
                     {
@@ -35,10 +35,7 @@ namespace ConsoleApp1
                 }
                 catch { }
 
-                for (int i = 0; i < list.Count; i++)
-                {
-                    var result = list[i].Result;
-                }
+                string str = string.Join(",",list.Select(r => r.Result));
 
                 Console.ReadKey();
             }
@@ -82,7 +79,7 @@ namespace ConsoleApp1
             {
                 //client.DefaultRequestHeaders.Clear();
                 //client.DefaultRequestHeaders.Add("XSRF-TOKEN", token);
-                var req = new HttpRequestMessage(HttpMethod.Post, "http://localhost:58878/Account/Login") { Content = new FormUrlEncodedContent(nvc) };
+                var req = new HttpRequestMessage(HttpMethod.Post, "http://localhost:58878/Account/Test") { Content = new FormUrlEncodedContent(nvc) };
                 var sendTask = client.SendAsync(req);
                 sendTask.Wait();
                 var res = sendTask.Result.Content.ReadAsStringAsync();
