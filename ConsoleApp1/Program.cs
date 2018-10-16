@@ -15,26 +15,25 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
 
-                //https://stackoverflow.com/questions/31138179/asynchronous-locking-based-on-a-key
+            //https://stackoverflow.com/questions/31138179/asynchronous-locking-based-on-a-key
 
-                List<Task<string>> list = new List<Task<string>>();
-                for(int i=0;i<20;i++)
+            List<Task<string>> list = new List<Task<string>>();
+            for (int i = 0; i < 5; i++)
+            {
+                Task<string> task = new Task<string>(() =>
                 {
-                    Task<string> task = new Task<string>(() =>
-                    {
-                        return do1();
-                    }); task.Start();
-                    list.Add(task);
-                }
-                try
-                {
-                    //因为task没有启动所有已知会hold住
-                    Task.WaitAll(list.ToArray());
-                }
-                catch { }
+                    return do1();
+                }); task.Start();
+                list.Add(task);
+            }
+            try
+            {
+                //因为task没有启动所有已知会hold住
+                Task.WaitAll(list.ToArray());
+            }
+            catch { }
 
-                string str = string.Join(",",list.Select(r => r.Result));
-
+            string str = string.Join(",", list.Select(r => r.Result));
         }
 
         public static string do1()
@@ -82,7 +81,6 @@ namespace ConsoleApp1
                 res.Wait();
                 return res.Result;
             }
-            return string.Empty;
         }
     }
 }
