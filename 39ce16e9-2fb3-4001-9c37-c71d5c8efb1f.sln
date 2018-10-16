@@ -61,6 +61,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interlocked1", "Interlocked
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Redis", "Redis", "{606DD4E4-27FE-405B-B80C-9652F9E71442}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "memcached1", "memcached1\memcached1.csproj", "{EF2A797B-EA7B-47A8-875E-F96527A27C87}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -151,6 +153,10 @@ Global
 		{005D6421-4DCC-47C8-AFEA-CA3A81613823}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{005D6421-4DCC-47C8-AFEA-CA3A81613823}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{005D6421-4DCC-47C8-AFEA-CA3A81613823}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF2A797B-EA7B-47A8-875E-F96527A27C87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF2A797B-EA7B-47A8-875E-F96527A27C87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF2A797B-EA7B-47A8-875E-F96527A27C87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF2A797B-EA7B-47A8-875E-F96527A27C87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -176,6 +182,7 @@ Global
 		{A8EF14E0-8A65-4264-AD98-E72367D1C95F} = {43B83923-4CDD-487B-B5A7-FD7A0C16684B}
 		{286693F2-A6F5-4299-BFFB-DE7B5B5A2F46} = {26A84148-A4F6-4F94-A5EE-BB94908CABA3}
 		{005D6421-4DCC-47C8-AFEA-CA3A81613823} = {26A84148-A4F6-4F94-A5EE-BB94908CABA3}
+		{EF2A797B-EA7B-47A8-875E-F96527A27C87} = {26A84148-A4F6-4F94-A5EE-BB94908CABA3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {10FE627A-527C-4B00-A14E-FCEF6F4C6835}
