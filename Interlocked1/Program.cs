@@ -10,20 +10,20 @@ namespace Interlocked1
     class Program
     {
 
-        private static string _flag;
+        private static int _flag;
 
-        public static void ExactlyOnceMethod(string key)
+        public static void ExactlyOnceMethod()
         {
-            var original = Interlocked.Exchange(ref key, "1");
+            var original = Interlocked.Exchange(ref _flag, 1);
             if (original == _flag)
             {
                 // 1.重复进入
-                Console.WriteLine($"key:{key},重复进入");
+                Console.WriteLine("重复进入");
             }
             else
             {
                 // 2.第一次进入
-                Console.WriteLine($"key:{key},第一次进入");
+                Console.WriteLine("第一次进入");
             }
         }
 
@@ -36,7 +36,7 @@ namespace Interlocked1
         {
             Parallel.For(0, 10, (n) =>
               {
-                  ExactlyOnceMethod(n.ToString());
+                  ExactlyOnceMethod();
               });
             Console.ReadKey();
         }
