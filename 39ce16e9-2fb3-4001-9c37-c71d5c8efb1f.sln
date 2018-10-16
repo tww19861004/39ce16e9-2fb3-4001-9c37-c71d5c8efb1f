@@ -51,6 +51,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigureAwait1", "Configur
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyValuePost1", "KeyValuePost1\KeyValuePost1.csproj", "{927EDD9C-72AE-4D5C-A07C-9617AB575DE7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "deadlock_winform_2", "deadlock_winform_2\deadlock_winform_2.csproj", "{A8EF14E0-8A65-4264-AD98-E72367D1C95F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +131,10 @@ Global
 		{927EDD9C-72AE-4D5C-A07C-9617AB575DE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{927EDD9C-72AE-4D5C-A07C-9617AB575DE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{927EDD9C-72AE-4D5C-A07C-9617AB575DE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8EF14E0-8A65-4264-AD98-E72367D1C95F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8EF14E0-8A65-4264-AD98-E72367D1C95F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8EF14E0-8A65-4264-AD98-E72367D1C95F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8EF14E0-8A65-4264-AD98-E72367D1C95F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -151,6 +157,7 @@ Global
 		{1D9DAD64-C5B3-4B04-9393-B47445BE2675} = {43B83923-4CDD-487B-B5A7-FD7A0C16684B}
 		{4B8BC8F7-BD09-4418-B844-2D7AC903DCF5} = {43B83923-4CDD-487B-B5A7-FD7A0C16684B}
 		{927EDD9C-72AE-4D5C-A07C-9617AB575DE7} = {46A049A1-36DA-4444-BAC6-7F142D3C3D53}
+		{A8EF14E0-8A65-4264-AD98-E72367D1C95F} = {43B83923-4CDD-487B-B5A7-FD7A0C16684B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {10FE627A-527C-4B00-A14E-FCEF6F4C6835}
