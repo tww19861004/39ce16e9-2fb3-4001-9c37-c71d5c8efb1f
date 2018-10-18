@@ -23,7 +23,7 @@ namespace SingletonLazy1
     {
         static void Main(string[] args)
         {
-            Parallel.For(0, 1000, n =>
+            Parallel.For(0, 100, n =>
               {
                   Singleton.Instance.ToString();
               });
