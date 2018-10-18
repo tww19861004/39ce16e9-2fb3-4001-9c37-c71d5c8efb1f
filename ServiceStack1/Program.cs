@@ -17,14 +17,14 @@ namespace ServiceStack1
 
         public static ConnectionMultiplexer Connection => LazyConnection.Value;
 
-        public static IDatabase RedisCache => Connection?.GetDatabase();
+        public static IDatabase RedisCache => Connection.GetDatabase();
     }
 
     class Program
     {
         static void Main(string[] args)
         {
-            var redis = RedisStore.RedisCache;
+            var redis = RedisStore.RedisCache;            
 
             if (redis.StringSet("tww", "1234556"))
             {
