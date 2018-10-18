@@ -18,7 +18,7 @@ namespace ConsoleApp1
             //https://stackoverflow.com/questions/31138179/asynchronous-locking-based-on-a-key
 
             List<Task<string>> list = new List<Task<string>>();
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 10; i++)
             {
                 Task<string> task = new Task<string>(() =>
                 {
@@ -33,7 +33,7 @@ namespace ConsoleApp1
             }
             catch { }
 
-            string str = string.Join(",", list.Select(r => r.Result));
+            string str = string.Join("\r\n", list.Select(r => r.Result));
         }
 
         public static string do1()
@@ -62,7 +62,7 @@ namespace ConsoleApp1
 
             var nvc = new List<KeyValuePair<string, string>>();
             nvc.Add(new KeyValuePair<string, string>("UserName", "admin"));
-            nvc.Add(new KeyValuePair<string, string>("Password", "123456"));
+            nvc.Add(new KeyValuePair<string, string>("Password", "e10adc3949ba59abbe56e057f20f883e"));
             nvc.Add(new KeyValuePair<string, string>("__RequestVerificationToken", token));
 
 
@@ -74,7 +74,7 @@ namespace ConsoleApp1
             {
                 //client.DefaultRequestHeaders.Clear();
                 //client.DefaultRequestHeaders.Add("XSRF-TOKEN", token);
-                var req = new HttpRequestMessage(HttpMethod.Post, "http://localhost:9999/Account/Login") { Content = new FormUrlEncodedContent(nvc) };
+                var req = new HttpRequestMessage(HttpMethod.Post, "http://localhost:8888/Account/Login") { Content = new FormUrlEncodedContent(nvc) };
                 var sendTask = client.SendAsync(req);
                 sendTask.Wait();
                 var res = sendTask.Result.Content.ReadAsStringAsync();

@@ -26,9 +26,9 @@ namespace ServiceStack1
         {
             var redis = RedisStore.RedisCache;            
 
-            if (redis.StringSet("tww", "1234556"))
+            //if (redis.StringSet("tww", "1234556"))
             {
-                var val = redis.StringGet("tww");
+                var val = redis.StringGet("AdminLogin");
 
                 Console.WriteLine(val);
             }
