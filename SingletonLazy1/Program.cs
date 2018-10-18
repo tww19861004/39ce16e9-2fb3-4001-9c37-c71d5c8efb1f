@@ -19,43 +19,14 @@ namespace SingletonLazy1
         }
     }
 
-    /// <summary>
-    /// 线程不安全
-    /// </summary>
-    public sealed class Singleton1
-    {
-        public static string id;
-        static Singleton1()
-        {
-            Console.WriteLine("静态构造函数");
-        }
-
-        /// <summary>
-        /// Prevents a default instance of the 
-        /// <see cref="Singleton"/> class from being created.
-        /// </summary>
-        //public Singleton1()
-        //{
-        //    Console.WriteLine("共有构造函数");
-        //}
-
-        private Singleton1()
-        {
-            Console.WriteLine("私有构造函数");
-        }
-    }
     class Program
     {
         static void Main(string[] args)
         {
-            //Parallel.For(0, 10, n =>
-            //  {
-            //      Console.Write(Singleton1.Instance.ToString()+"\r\n");                  
-            //  });
-            for (int i = 0; i < 10; i++)
-            {
-                Console.WriteLine(Singleton1.id);
-            }
+            Parallel.For(0, 1000, n =>
+              {
+                  Singleton.Instance.ToString();
+              });
             Console.ReadKey();
         }
     }
