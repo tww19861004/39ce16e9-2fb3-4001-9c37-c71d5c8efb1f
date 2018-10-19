@@ -9,7 +9,25 @@ namespace ServiceStack1
 {
     public sealed class RedisStore
     {
-        private static readonly Lazy<ConnectionMultiplexer> LazyConnection = new Lazy<ConnectionMultiplexer>(()=> ConnectionMultiplexer.Connect("127.0.0.1:6379,password=12345"));
+
+        //在很多常见的情况下，StackExchange.Redis 将会自动的配置多个设置选项，包括服务器类型和版本，连接超时和主/从关系配置。可是有时候在Redis服务器这个命令是被禁止的。在这种情况下，提供更多的信息是非常有用的：
+        private static ConfigurationOptions configOptions = new ConfigurationOptions
+        {
+            EndPoints =
+            {
+                { "127.0.0.1", 6379 }
+            },
+            CommandMap = CommandMap.Create(new HashSet<string>
+            {
+                // 排除几个命令
+                //"INFO", "CONFIG", "CLUSTER", "PING", "ECHO", "CLIENT"
+            }, available: false),
+            AllowAdmin = true,
+            Proxy = Proxy.Twemproxy,
+            Password = "12345",
+        };
+
+        private static readonly Lazy<ConnectionMultiplexer> LazyConnection = new Lazy<ConnectionMultiplexer>(()=> ConnectionMultiplexer.Connect(configOptions));
 
         private RedisStore()
         {
@@ -26,9 +44,9 @@ namespace ServiceStack1
         {
             var redis = RedisStore.RedisCache;            
 
-            //if (redis.StringSet("tww", "1234556"))
+            if (redis.StringSet("tww", "1234556"))
             {
-                var val = redis.StringGet("AdminLogin");
+                var val = redis.StringGet("tww");
 
                 Console.WriteLine(val);
             }
