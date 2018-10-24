@@ -10,7 +10,7 @@ namespace SingletonLazy1
     public sealed class Singleton
     {
         private static readonly Lazy<Singleton> lazy =
-            new Lazy<Singleton>(() => new Singleton(), LazyThreadSafetyMode.PublicationOnly);
+            new Lazy<Singleton>(() => new Singleton(), LazyThreadSafetyMode.ExecutionAndPublication);
 
         public static Singleton Instance { get { return lazy.Value; } }
 
@@ -49,7 +49,7 @@ namespace SingletonLazy1
     {
         static void Main(string[] args)
         {
-            Parallel.For(0, 10000, n =>
+            Parallel.For(0, 80000, n =>
               {
                   Singleton.Instance.ToString();
               });
