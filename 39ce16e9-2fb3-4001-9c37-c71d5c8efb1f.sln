@@ -79,6 +79,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CacheHelper", "CacheHelper"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RabbitMQ", "RabbitMQ", "{A1F61B0B-9F4E-499C-A3BA-DC1D7224D775}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "excel1", "excel1\excel1.csproj", "{E88F215E-80CD-4359-B10F-E8D15C850ED2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -197,6 +199,10 @@ Global
 		{EB5D3958-99BF-4032-8BE5-B55989D976DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB5D3958-99BF-4032-8BE5-B55989D976DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB5D3958-99BF-4032-8BE5-B55989D976DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E88F215E-80CD-4359-B10F-E8D15C850ED2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E88F215E-80CD-4359-B10F-E8D15C850ED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E88F215E-80CD-4359-B10F-E8D15C850ED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E88F215E-80CD-4359-B10F-E8D15C850ED2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
