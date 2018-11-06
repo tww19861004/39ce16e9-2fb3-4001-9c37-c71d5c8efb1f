@@ -10,7 +10,9 @@ namespace KeyValuePost1
     {
         static void Main(string[] args)
         {
-
+            decimal r = 3134.65m;
+            decimal r1 = 3550.00m;
+            decimal r2 = r / r1;
         }
     }
 }
