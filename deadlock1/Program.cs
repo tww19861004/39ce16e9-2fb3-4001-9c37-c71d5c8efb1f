@@ -21,9 +21,18 @@ namespace deadlock1
             }
         }
 
+        public class test
+        {
+            /// <summary>
+            /// CTRIP 产品来源 True：供应商；False：Ctrip自签
+            /// </summary>
+            public bool? isCommissionable { get; set; }
+        }
+
         static void Main(string[] args)
         {
-
+            string jsonstring = "{\"isCommissionable\": \"\"}";
+            var res = Newtonsoft.Json.JsonConvert.DeserializeObject<test>(jsonstring);
         }
     }
 }
