@@ -85,6 +85,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Winform", "Winform", "{1BD2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsAsync1", "WindowsFormsAsync1\WindowsFormsAsync1.csproj", "{EB6E178C-71E3-48D0-AA55-5E8449BB2885}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FromCurrentSynchronizationContext1", "FromCurrentSynchronizationContext1\FromCurrentSynchronizationContext1.csproj", "{0C430568-E107-4D7C-9F0C-4587036A8723}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -211,6 +213,10 @@ Global
 		{EB6E178C-71E3-48D0-AA55-5E8449BB2885}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB6E178C-71E3-48D0-AA55-5E8449BB2885}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB6E178C-71E3-48D0-AA55-5E8449BB2885}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C430568-E107-4D7C-9F0C-4587036A8723}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C430568-E107-4D7C-9F0C-4587036A8723}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C430568-E107-4D7C-9F0C-4587036A8723}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C430568-E107-4D7C-9F0C-4587036A8723}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -246,6 +252,7 @@ Global
 		{E4069BF6-149C-4D70-A706-6398BA7AF594} = {606DD4E4-27FE-405B-B80C-9652F9E71442}
 		{61D305BE-F98F-43F6-8B1C-A91873380E17} = {43B83923-4CDD-487B-B5A7-FD7A0C16684B}
 		{EB6E178C-71E3-48D0-AA55-5E8449BB2885} = {1BD29E47-6DB4-4FB1-AD42-2087EC966300}
+		{0C430568-E107-4D7C-9F0C-4587036A8723} = {43B83923-4CDD-487B-B5A7-FD7A0C16684B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {10FE627A-527C-4B00-A14E-FCEF6F4C6835}
