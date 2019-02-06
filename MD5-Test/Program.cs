@@ -5,11 +5,12 @@ using System.Security.Cryptography;
 
 namespace MD5_Test
 {
+    
     class Program
     {
         static void Main(string[] args)
         {
-
+            
         }
 
         public static string GetStrMd5(string ConvertString)
