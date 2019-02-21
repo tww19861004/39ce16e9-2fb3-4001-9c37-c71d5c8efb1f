@@ -25,7 +25,7 @@ namespace KeyValuePost1
             string str2 = GetKeyValueParmsByObj(new Dictionary<string, string>() { { "uid", "190000000037784266" }, { "gorderId", "3000000088" } });
 
             //方式1
-            string res1 = Post("http://iapi.vip.elong.com/mapi/GetShortLink", new Dictionary<string, string>() { { "uid", "190000000037784266" },{ "gorderId", "3000000088" } });
+            string res1 = Post("xxxxxx", new Dictionary<string, string>() { { "uid", "190000000037784266" },{ "gorderId", "3000000088" } });
 
             using (HttpClient hc12 = new HttpClient())
             {
