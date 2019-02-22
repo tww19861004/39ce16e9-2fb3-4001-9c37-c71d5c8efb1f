@@ -129,20 +129,19 @@ namespace ServiceStack1
     {
         static void Main(string[] args)
         {
-            long id1 = 190000000037784266;
-            
-            string str = "{\"errorMsg\":\"正常\",\"orderList\":[{\"contactInfo\":{\"email\":\"Intl_H_CS@corp.elong.com\",\"phone\":\"4009333333\"},\"elongOrderId\":\"20181210391550913\",\"merchantOrderId\":\"\",\"operatorType\":\"confirm\",\"pid\":\"5034332,61741,211,2019-02-05,2019-02-08,1488,1,2,0\",\"rooms\":[{\"guestInfo\":{\"name\":{\"firstName\":\"Xuyan\",\"lastName\":\"Wu\"}}},{\"guestInfo\":{\"name\":{\"firstName\":\"Pingping\",\"lastName\":\"Gu\"}}}]}],\"retCode\":0,\"uid\":\"cc357930-7dd3-4430-85ed-5643d3ece9da\"} ";
-            Root root = Newtonsoft.Json.JsonConvert.DeserializeObject<Root>(str);
+            var str1 = "";
+            var str2 = str1.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).ToList();
 
-            var redis = RedisStore.RedisCache;            
-
-            if (redis.StringSet("tww", "1234556"))
+            var OrderBookerRemark = "大床;";
+            var str = OrderBookerRemark.Split(new string[] { "||", ",", "，", ";", "；" }, StringSplitOptions.None);
+            if (1==1)
             {
-                var val = redis.StringGet("tww");
-
-                Console.WriteLine(val);
+                for (int i = 0; i < str.Length; i++)
+                {
+                    
+                }
             }
-            Console.ReadKey();
+                Console.ReadKey();
         }
     }
 }
