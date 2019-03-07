@@ -7,6 +7,93 @@ using System.Threading.Tasks;
 
 namespace ServiceStack1
 {
+    public class ContactInfo
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public string email { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string phone { get; set; }
+    }
+
+    public class Name
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public string firstName { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string lastName { get; set; }
+    }
+
+    public class GuestInfo
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public Name name { get; set; }
+    }
+
+    public class RoomsItem
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public GuestInfo guestInfo { get; set; }
+    }
+
+    public class OrderListItem
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContactInfo contactInfo { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string elongOrderId { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string merchantOrderId { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string operatorType { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string pid { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public List<RoomsItem> rooms { get; set; }
+    }
+
+    public class Root
+    {
+        /// <summary>
+        /// 正常
+        /// </summary>
+        public string errorMsg { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public List<OrderListItem> orderList { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public int retCode { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string uid { get; set; }
+    }
     public sealed class RedisStore
     {
 
@@ -42,15 +129,19 @@ namespace ServiceStack1
     {
         static void Main(string[] args)
         {
-            var redis = RedisStore.RedisCache;            
+            var str1 = "";
+            var str2 = str1.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).ToList();
 
-            if (redis.StringSet("tww", "1234556"))
+            var OrderBookerRemark = "大床;";
+            var str = OrderBookerRemark.Split(new string[] { "||", ",", "，", ";", "；" }, StringSplitOptions.None);
+            if (1==1)
             {
-                var val = redis.StringGet("tww");
-
-                Console.WriteLine(val);
+                for (int i = 0; i < str.Length; i++)
+                {
+                    
+                }
             }
-            Console.ReadKey();
+                Console.ReadKey();
         }
     }
 }
