@@ -16,6 +16,8 @@ namespace _39ce16e9_2fb3_4001_9c37_c71d5c8efb1f
             new Task(StartCode, 5).Start();
             Console.WriteLine($"主线程到此为止,当前线程id:{Thread.CurrentThread.ManagedThreadId}");
             Thread.Sleep(5000);
+            Console.ReadKey();
+            return;
 
             //1000000000这个数字会抛出System.AggregateException
             Task<Int32> t = new Task<Int32>(r => Sum((Int32)r), 1000000000);
