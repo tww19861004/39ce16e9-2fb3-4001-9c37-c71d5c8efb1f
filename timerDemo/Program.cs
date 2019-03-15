@@ -26,15 +26,17 @@ namespace timerDemo
             {
                 Interval = 1000 * 6
             };
+            timer3.Start();
             timer3.Elapsed += (obj, events) =>
             {
                 try
                 {
                     Console.WriteLine($"timer3每秒执行一次的定时任务,当前线程Id={System.Threading.Thread.CurrentThread.ManagedThreadId},IsThreadPoolThread={System.Threading.Thread.CurrentThread.IsThreadPoolThread},IsBackground={System.Threading.Thread.CurrentThread.IsBackground}");
+                    //timer3.Stop();
                 }
                 catch (Exception ex)
                 {
-
+                    Console.WriteLine(ex.Message);
                 }
             };
             Console.ReadKey();
