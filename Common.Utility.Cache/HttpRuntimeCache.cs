@@ -20,17 +20,17 @@ namespace Common.Utility.Cache
             throw new NotImplementedException();
         }
 
-        public T GetCache<T>(string key)
+        public T Get<T>(string key)
         {
             throw new NotImplementedException();
         }
 
-        public void RemoveCache(string key)
+        public void Remove(string key)
         {
             throw new NotImplementedException();
         }
 
-        public bool SetCache<T>(string key, T value, int expired = 10000)
+        public bool Set<T>(string key, T value, int expired = 10000)
         {
             throw new NotImplementedException();
         }
