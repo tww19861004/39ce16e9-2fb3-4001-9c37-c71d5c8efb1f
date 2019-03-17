@@ -58,12 +58,23 @@ namespace 进程和应用域和线程
             //Parallel
 
             //4.进程、应用程序域、线程之间的关系
-            //一个进程内可以包含多个应用程序域，也有包括多个线程，线程也可以穿梭于多个应用程序域当中。
-            //但在同一个时刻，线程只处于一个应用程序域中。
+            //4.1 一个进程内可以包含多个应用程序域，也有包括多个线程，线程也可以穿梭于多个应用程序域当中。
+            //4.2 但在同一个时刻，线程只处于一个应用程序域中。
+            //4.3 在一个进程中可以包含多个应用程序域，一个应用程序域可以装载一个可执行程序（*.exe）或者多个程序集（*.dll）。
+            //这样可以使应用程序域之间实现深度隔离，即使进程中的某个应用程序域出现错误，也不会影响其他应用程序域的正常运作。
 
+
+            //在AppDomain中加载程序集
+            var appDomain = AppDomain.CreateDomain("NewAppDomain");
+            appDomain.Load("Model");
+            foreach (var assembly in appDomain.GetAssemblies())
+                Console.WriteLine(string.Format("{0}\n----------------------------",
+                    assembly.FullName));
+            Console.ReadKey();
 
             //大文件拷贝
-            Thread thread = new Thread(() => {
+            Thread thread = new Thread(() =>
+            {
                 using (FileStream fRead = new FileStream("../../file/file.rar", FileMode.Open))
                 {
                     using (FileStream fWrite = new FileStream("../../file/BMS中间版bak.rar", FileMode.Create))
