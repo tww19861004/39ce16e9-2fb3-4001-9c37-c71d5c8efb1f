@@ -7,7 +7,7 @@ namespace Common.Utility.Cache
         /// <summary>
         /// 缓存过期时间
         /// </summary>
-        int TimeOut { set; get; }
+        //int TimeOut { set; get; }
 
         bool Exists(string key);
         
