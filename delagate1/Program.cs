@@ -12,5 +12,17 @@ namespace delagate1
         {
 
         }
+
+        public static async Task<Response> RunAsync<Request,Response>(Request request, Func<Request, Task<Response>> func)
+        {
+            try
+            {
+                return await func(request);
+            }
+            catch(Exception ex)
+            {
+                return default(Response);
+            }
+        }
     }
 }

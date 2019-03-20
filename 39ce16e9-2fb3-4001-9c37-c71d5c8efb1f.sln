@@ -127,6 +127,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dictionary1", "dictionary1\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "delagate1", "delagate1\delagate1.csproj", "{E8251F93-3BBD-4A4B-A54B-D2635A2498A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "thread2", "thread2\thread2.csproj", "{B048E91B-A948-478E-9C7C-FB1D29911487}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -321,6 +323,10 @@ Global
 		{E8251F93-3BBD-4A4B-A54B-D2635A2498A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8251F93-3BBD-4A4B-A54B-D2635A2498A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8251F93-3BBD-4A4B-A54B-D2635A2498A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B048E91B-A948-478E-9C7C-FB1D29911487}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B048E91B-A948-478E-9C7C-FB1D29911487}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B048E91B-A948-478E-9C7C-FB1D29911487}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B048E91B-A948-478E-9C7C-FB1D29911487}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -373,6 +379,7 @@ Global
 		{EFCAD8D3-5C80-45EA-8C7F-B63096AEE3E1} = {9E8AE247-4D47-4463-8D3D-B1EBAE1CBE05}
 		{9AD8D802-8CC0-4F88-99C6-FA3274598A87} = {57CF77F7-9630-4490-9E84-C28C28C74829}
 		{E8251F93-3BBD-4A4B-A54B-D2635A2498A7} = {0E518DEB-D408-4C69-BE95-9FEA07D9F3CC}
+		{B048E91B-A948-478E-9C7C-FB1D29911487} = {06D00F21-AA95-4DDB-A107-6F1F81EF9E2F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {10FE627A-527C-4B00-A14E-FCEF6F4C6835}
