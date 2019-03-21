@@ -10,7 +10,8 @@ namespace MD5_Test
     {
         static void Main(string[] args)
         {
-            
+            string str = string.Empty;
+            bool b1 = str.Contains(null);
         }
 
         public static string GetStrMd5(string ConvertString)
