@@ -131,6 +131,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "thread2", "thread2\thread2.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "无侵入链路跟踪", "无侵入链路跟踪", "{1C123DB9-DD17-4199-A010-3E96B9045AFE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TIDB", "TIDB", "{1C1C48FB-51AE-489A-ACE8-858968D1CB6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
