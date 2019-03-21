@@ -129,6 +129,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "delagate1", "delagate1\dela
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "thread2", "thread2\thread2.csproj", "{B048E91B-A948-478E-9C7C-FB1D29911487}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "无侵入链路跟踪", "无侵入链路跟踪", "{1C123DB9-DD17-4199-A010-3E96B9045AFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
