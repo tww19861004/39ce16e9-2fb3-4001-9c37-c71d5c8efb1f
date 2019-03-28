@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -24,19 +25,20 @@ namespace thread2
             Console.WriteLine(Thread.CurrentThread.IsBackground);            
 
             //Thread创建的线程是前台线程
-            Thread th = new Thread(delegate () 
+
+            //Task使用程序池创建线程,默认为后台线程
+
+            //前台线程阻止了主线程的关闭
+            Thread th = new Thread(delegate ()
             {
                 Thread.Sleep(6000);
                 Console.WriteLine("start a new thread");
+                File.AppendAllText(@"D:\1.txt", System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")+Environment.NewLine);
             });
-            Console.WriteLine(th.IsBackground);
+            th.IsBackground = true;
+            th.Start();
 
-            //Task使用程序池创建线程,默认为后台线程
-            Task task = new Task(() => Console.WriteLine("start a new task="+Thread.CurrentThread.IsBackground));
-            task.Start();
-
-
-            Console.ReadKey();
+            Console.WriteLine("main thread end");
         }
     }
 }
