@@ -21,10 +21,14 @@ namespace thread2
 
 
             //当前主线程是个前台线程,且不能修改为后台线程
-            Console.WriteLine(Thread.CurrentThread.IsBackground);
+            Console.WriteLine(Thread.CurrentThread.IsBackground);            
 
             //Thread创建的线程是前台线程
-            Thread th = new Thread(delegate () { Thread.Sleep(6000); Console.WriteLine("start a new thread"); });
+            Thread th = new Thread(delegate () 
+            {
+                Thread.Sleep(6000);
+                Console.WriteLine("start a new thread");
+            });
             Console.WriteLine(th.IsBackground);
 
             //Task使用程序池创建线程,默认为后台线程

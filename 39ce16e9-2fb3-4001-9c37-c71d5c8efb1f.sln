@@ -145,6 +145,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Transactions 事务�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sqlserver原子性", "sqlserver原子性\sqlserver原子性.csproj", "{D4A18230-979D-4CF1-A255-B4E3485AA1B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "主线程,前台线程,后台线程winform", "主线程,前台线程,后台线程winform\主线程,前台线程,后台线程winform.csproj", "{CDE01479-66C3-4042-850A-435AF15B72D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -363,6 +365,10 @@ Global
 		{D4A18230-979D-4CF1-A255-B4E3485AA1B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4A18230-979D-4CF1-A255-B4E3485AA1B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4A18230-979D-4CF1-A255-B4E3485AA1B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDE01479-66C3-4042-850A-435AF15B72D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDE01479-66C3-4042-850A-435AF15B72D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDE01479-66C3-4042-850A-435AF15B72D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDE01479-66C3-4042-850A-435AF15B72D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -421,6 +427,7 @@ Global
 		{BA5C4971-AA69-4C2A-8D7F-87CDEE01ABC0} = {620670FE-B2E1-4FE0-90F8-8935BEC2F09D}
 		{8A7B8FD1-B332-41D4-A94C-D75A0F7AF214} = {620670FE-B2E1-4FE0-90F8-8935BEC2F09D}
 		{D4A18230-979D-4CF1-A255-B4E3485AA1B2} = {57CF77F7-9630-4490-9E84-C28C28C74829}
+		{CDE01479-66C3-4042-850A-435AF15B72D1} = {06D00F21-AA95-4DDB-A107-6F1F81EF9E2F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {10FE627A-527C-4B00-A14E-FCEF6F4C6835}
