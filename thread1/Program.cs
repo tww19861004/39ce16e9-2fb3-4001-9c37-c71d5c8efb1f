@@ -8,48 +8,39 @@ using System.Threading.Tasks;
 namespace thread1
 {
     class Program
-    {
-        private static bool _isDone = false;
+    {        
         static void Main()
         {
-            //1.线程之间共享数据的问题
-            new Thread(Done).Start();
-            new Thread(Done).Start();
+            //所有的异步线程都来自于.NET线程池
+            //每次执行一次异步调用，便产生一个新的线程；同时可用线程数目减少            
+            Action ac = () =>
+            {
+                int intAvailableThreads, intAvailableIoAsynThreds;
 
-            //2.其它线程的异常，主线程可以捕获到么？
-            try
+                // 取得线程池内的可用线程数目，我们只关心第一个参数即可
+                ThreadPool.GetAvailableThreads(out intAvailableThreads,
+                out intAvailableIoAsynThreds);
+
+                // 线程信息
+                string strMessage =
+                String.Format("是否是线程池线程：{0},线程托管ID：{1},可用线程数：{2}",
+                Thread.CurrentThread.IsThreadPoolThread.ToString(),
+                Thread.CurrentThread.GetHashCode(),
+                intAvailableThreads);
+
+                Console.WriteLine(strMessage);
+
+                Thread.Sleep(3000);
+            };
+
+            for (int i = 0; i < 30; i++)
             {
-                new Thread(Go).Start();
-            }
-            catch (Exception ex)
-            {
-                // 其它线程里面的异常，我们这里面是捕获不到的。
-                Console.WriteLine("Exception!");
+                // 以异步的形式，调用Sleep函数30次
+                ac.BeginInvoke(null, null);
             }
 
-            //升级了的Task呢？其它线程的异常，主线程可以捕获到么？
-            try
-            {
-                var task = Task.Run(() => { Go(); });
-                task.Wait();  // 在调用了这句话之后，主线程才能捕获task里面的异常
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception!");
-            }
-
-            Console.ReadLine();
+            Console.ReadKey();
         }
 
-        static void Done()
-        {
-            if (!_isDone)
-            {
-                Console.WriteLine("Done");
-                _isDone = true; // 第二个线程来的时候，就不会再执行了(也不是绝对的，取决于计算机的CPU数量以及当时的运行情况)                
-            }
-        }
-
-        static void Go() { throw null; }
     }
 }

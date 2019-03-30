@@ -58,6 +58,9 @@ namespace thread2
 
             Console.WriteLine("main thread end,IsBackground=" + Thread.CurrentThread.IsBackground);
             Console.ReadKey();
+
+            //.NET线程池默认包含25个线程
+
         }
     }
 }
