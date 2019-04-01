@@ -10,11 +10,10 @@ namespace MD5_Test
     {
         static void Main(string[] args)
         {
-            int? status = null;
-            if(status.HasValue)
-            {
-
-            }
+            DateTime now = DateTime.Now.AddDays(1);
+            DateTime today2 = new DateTime(now.Year, now.Month, now.Day);
+            Console.WriteLine(today2);
+            Console.ReadKey();
         }
 
         public static string GetStrMd5(string ConvertString)

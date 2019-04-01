@@ -74,7 +74,7 @@ namespace redis_protobuf1
         {
             const int num = 5;
             RedisStore.RedisCache.StringSet("StackExchangeRedis_TestInteger", num);
-            var val = RedisStore.RedisCache.StringGet("StackExchangeRedis_TestInteger");
+            var val = RedisStore.RedisCache.StringGet("StackExchangeRedis_TestInteger");            
             Console.WriteLine(val);
         }
 

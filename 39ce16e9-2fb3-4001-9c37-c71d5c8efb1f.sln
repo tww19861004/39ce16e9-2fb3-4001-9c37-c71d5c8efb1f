@@ -149,6 +149,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "主线程,前台线程,后�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "析构函数1", "析构函数1\析构函数1.csproj", "{152957D0-DB67-42E8-A272-22E4A7FAEA57}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "100质数素数", "100质数素数\100质数素数.csproj", "{01F092B1-9666-4951-A40D-EA0BE248E3D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -375,6 +377,10 @@ Global
 		{152957D0-DB67-42E8-A272-22E4A7FAEA57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{152957D0-DB67-42E8-A272-22E4A7FAEA57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{152957D0-DB67-42E8-A272-22E4A7FAEA57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01F092B1-9666-4951-A40D-EA0BE248E3D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01F092B1-9666-4951-A40D-EA0BE248E3D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01F092B1-9666-4951-A40D-EA0BE248E3D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01F092B1-9666-4951-A40D-EA0BE248E3D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -435,6 +441,7 @@ Global
 		{D4A18230-979D-4CF1-A255-B4E3485AA1B2} = {57CF77F7-9630-4490-9E84-C28C28C74829}
 		{CDE01479-66C3-4042-850A-435AF15B72D1} = {06D00F21-AA95-4DDB-A107-6F1F81EF9E2F}
 		{152957D0-DB67-42E8-A272-22E4A7FAEA57} = {57CF77F7-9630-4490-9E84-C28C28C74829}
+		{01F092B1-9666-4951-A40D-EA0BE248E3D5} = {57CF77F7-9630-4490-9E84-C28C28C74829}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {10FE627A-527C-4B00-A14E-FCEF6F4C6835}
