@@ -19,8 +19,6 @@ namespace _100质数素数
                     Console.WriteLine(i+"是质数");
                 }
             }
-
-
             Console.ReadKey();
         }
 
