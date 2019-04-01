@@ -37,5 +37,14 @@ namespace _100质数素数
             }
             return true;
         }
+
+        public static int Foo(int i)
+        {
+            if (i <= 0)
+                return 0;
+            else if (i > 0 && i <= 2)
+                return 1;
+            else return Foo(i - 1) + Foo(i - 2);
+        }
     }
 }
