@@ -88,7 +88,7 @@ namespace CatCry
             Cat c = new Cat("唐二"); //实例化一个猫类
             Mouse h = new Mouse(); //实例化一个老鼠类
             People p = new People(); //实例化一个主人 类
-            c.CatCryEvent += new EventHandler<CatCryEventArgs>(h.r);
+            //c.CatCryEvent += new EventHandler<CatCryEventArgs>(h.r);
         }
     }
 }

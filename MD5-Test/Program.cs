@@ -42,7 +42,7 @@ namespace MD5_Test
             DateTime today2 = new DateTime(now.Year, now.Month, now.Day);
 
             //B b1 = new B();
-
+            Print(1);
 
             Console.ReadKey();
         }
@@ -55,6 +55,11 @@ namespace MD5_Test
             return t2;
         }
 
-              
+        private static bool Print(int number)
+        {
+            Console.WriteLine(number);
+            return number >= 200 || Print(number + 1);
+        }
+
     }
 }

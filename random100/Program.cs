@@ -11,9 +11,8 @@ namespace random100
     {
         static void Main(string[] args)
         {
-            int[] test = GenerateRandomNumber3();
-            int[] sortResult = Sort(test);
-            foreach (var item in sortResult)
+            string[] res = Shuffle();
+            foreach(var item in res)
             {
                 Console.WriteLine(item);
             }
@@ -90,6 +89,33 @@ namespace random100
                 }
             }
             return GenerateRandomNumber;
+        }
+
+        public static string[] Shuffle()
+        {
+            string[] result = new string[52];
+            string[] cardType = { "红桃","黑桃","方块","梅花" };
+            string[] cardValue = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
+            for(int i=0;i<cardType.Length;i++)
+            {
+                for(int j=0;j<cardValue.Length;j++)
+                {
+                    result[i* cardValue.Length + j] = $"{cardType[i]}{cardValue[j]}";
+                }
+            }
+            //用于保存返回结果            
+            Random random = new Random();
+            int index = 0;
+            for (int i = 0; i < result.Length; i++)
+            {
+                //随机一个索引
+                index = random.Next(0, result.Length - 1 - i);
+                //获取这个值和最后一个交换
+                string temp = result[index];
+                result[index] = result[result.Length - 1 - i];
+                result[result.Length - 1 - i] = temp;
+            }
+            return result;
         }
     }
 }
