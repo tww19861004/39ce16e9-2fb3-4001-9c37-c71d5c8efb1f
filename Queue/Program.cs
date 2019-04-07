@@ -29,7 +29,21 @@ namespace Queue
                   //Console.WriteLine(string.Format("Beginning iteration {0},Time = {1},IsThreadPool={2},ManagedThreadId={3}", i, DateTime.Now.ToString("yyyy-mm-dd hh-mm-ss"),Thread.CurrentThread.IsThreadPoolThread,Thread.CurrentThread.ManagedThreadId));
                   //Thread.Sleep(10);
               });
-            
+
+            Queue<string> strList = new Queue<string>();
+            ///向队列加入元素
+            strList.Enqueue("元素1");
+            strList.Enqueue("元素2");
+            strList.Enqueue("元素3");
+            ///遍历元素
+            foreach (var item in strList)
+            {
+                Console.WriteLine(item);
+            }
+            ///取出最先入队的元素，但并不删除
+            string mes = strList.Peek();
+            Console.WriteLine("去除最先入队的元素="+mes);
+
             Console.ReadKey();
         }
 
