@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B0D0DD4A-68FB-4643-859D-29093FEC854B}</ProjectGuid>
+    <ProjectGuid>{A0FAF850-9169-4DB8-9169-D948D4334910}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>heap堆</RootNamespace>
-    <AssemblyName>heap堆</AssemblyName>
+    <RootNamespace>Queue</RootNamespace>
+    <AssemblyName>Queue</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,10 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="企业微信截图_20190407155353.png" />
-    <Content Include="企业微信截图_20190407170326.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

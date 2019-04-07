@@ -6,24 +6,53 @@ using System.Threading.Tasks;
 
 namespace heap堆
 {
+    public struct SomeValue
+    {
+        public int NumberA { get; set; }
+    }
+    public class SomeClass
+    {
+        public int NumberA { get; set; }
+    }
     class Program
     {
         static void Main(string[] args)
         {
-            //什么是堆？（Heap）
-            // 堆是无序的，是一片不连续的内存域，由用户自己来控制和释放，
-            // 如果用户自己不释放的话，当内存达到一定的特定值时，通过垃圾回收器（GC）来回收。
-            //是程序运行期间动态分配的内存空间，你可以根据程序的运行情况确定要分配的堆内存的大小
+            //1.栈：当程序进入一个方法时，会为这个方法单独分配一块私属存储空间，
+            //用于存储这个方法内部的局部变量，当这个方法结束时，分配给这个方法的栈会被释放，这个栈中的变量也将随之释放。
+            //存放基本类型 的变量数据和对象的引用，
+            //但对象本身不存放在栈中，而是存放在堆（new出来的对象）或者常量池中（字符串常量对象存放的常量池中）
+            //（方法中的局部变量使用final修饰后，放在堆中，而不是栈中）】
 
-            //什么是栈？（Stack）
-            //栈是有顺序的，是一片连续的内存域，保持着先进后出的原则，由系统自动分配和维护。
+            //https://www.cnblogs.com/wjk921/p/4771602.html
+            //值传递：传的是对象的值。
+            //引用传递：传的是栈中对象的地址。
 
-            //表尾允许进行插入删除操作，称为栈顶（Top），另一端是固定的，称为栈底（Bottom）
 
-            //https://www.cnblogs.com/1312mn/p/9155715.html
+            int i = 110;//定义整数类型变量I的时候，这个变量占用的内存是内存栈中分配的
+            object obj = i;//装箱操作将变量 110存放到了内存堆中,而定义object对象类型的变量obj则在内存栈中，
+            //并指向int类型的数值110，而该数值是付给变量i的数值副本
+            i = 220;
+            Console.WriteLine("i={0},obj={1}", i, obj);
+            obj = 330;
+            Console.WriteLine("i={0},obj={1}", i, obj);
+            int j = (int)obj;
+            j = 440;
+            Console.WriteLine("j={0},obj={1}", i, obj);
 
-            //队列queue 先进先出/z/D/S'SDSDSDSDSDSD
+            //https://blog.csdn.net/ljb81565248/article/details/52601533
 
+
+
+            Console.ReadKey();
         }
+
+        public static int AddFive(int pValue)
+        {
+            int result;
+            result = pValue + 5;
+            return result;
+        }
+
     }
 }

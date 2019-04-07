@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{175FEB06-0386-4F12-ADCF-2D030D33A886}</ProjectGuid>
+    <ProjectGuid>{FF5836C4-3DE8-4A0B-A123-F47822E515AD}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>队列实现栈</RootNamespace>
-    <AssemblyName>队列实现栈</AssemblyName>
+    <RootNamespace>Stack</RootNamespace>
+    <AssemblyName>Stack</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
