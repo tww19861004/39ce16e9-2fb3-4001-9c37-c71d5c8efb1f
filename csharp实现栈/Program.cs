@@ -98,6 +98,24 @@ namespace csharp实现栈
             return node;
         }
 
+        public bool Contains(T obj)
+        {
+            int count = _size;
+            while(count-->0)
+            {
+                if( _stack[count] == null)
+                {
+                    if (obj == null)
+                        return true;
+                }
+                else
+                {
+                    return _stack[count].Equals(obj);
+                }
+            }
+            return false;
+        }
+
         public void Traverse()
         {
             for (int i = 0; i < _top; i++)
@@ -125,13 +143,26 @@ namespace csharp实现栈
             _stack = null;
         }
     }
+    public class Product
+    {
+        public string Name { get; set; }
+        public string Category { get; set; }
+        public int SellPrice { get; set; }
+    }
+
+
     class Program
     {
         static void Main(string[] args)
         {
             //队列在现实生活中的例子数不胜数。例如：排队打饭，排队购买机票，打印队列中等待处理的打印业务等
             //栈在生活中的例子也不少。例如：物流装车，火车调度等
-
+            //https://www.cnblogs.com/yezhu008/p/5726234.html
+            Product product = new Product() { Name = "1", Category = "2", SellPrice = 10 };
+            MyStack<Product> list = new MyStack<Product>(1);
+            list.Push(product);
+            bool exists = list.Contains(product);
+            Console.ReadKey();
         }
     }
 }
