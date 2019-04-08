@@ -7,6 +7,17 @@ using System.Threading.Tasks;
 
 namespace csharp实现栈
 {
+    interface IStackDS<T>
+    {
+        int Count { get; }//用来取得数据
+        int GetLength();
+        bool IsEmpty();
+        void Clear();
+        void Push(T item);
+        T Peek();
+        T Pop();
+    }
+
     public class MyStack<T> : IEnumerable<T>, IDisposable
     {
         private int _top = 0;
@@ -98,6 +109,16 @@ namespace csharp实现栈
             return node;
         }
 
+        public T Peek()
+        {
+            T node = default(T);
+            if (!IsEmpty())
+            {
+                node = _stack[_top-1];
+            }
+            return node;
+        }
+
         public bool Contains(T obj)
         {
             int count = _size;
@@ -143,11 +164,10 @@ namespace csharp实现栈
             _stack = null;
         }
     }
-    public class Product
+    class Person
     {
         public string Name { get; set; }
-        public string Category { get; set; }
-        public int SellPrice { get; set; }
+        public int Age { get; set; }
     }
 
 
@@ -155,13 +175,39 @@ namespace csharp实现栈
     {
         static void Main(string[] args)
         {
-            //队列在现实生活中的例子数不胜数。例如：排队打饭，排队购买机票，打印队列中等待处理的打印业务等
-            //栈在生活中的例子也不少。例如：物流装车，火车调度等
-            //https://www.cnblogs.com/yezhu008/p/5726234.html
-            Product product = new Product() { Name = "1", Category = "2", SellPrice = 10 };
-            MyStack<Product> list = new MyStack<Product>(1);
-            list.Push(product);
-            bool exists = list.Contains(product);
+            Person p1 = new Person
+            {
+                Name = "Flyee",
+                Age = 24
+            };
+            Person p2 = new Person
+            {
+                Name = "Flyee2",
+                Age = 18
+            };
+
+            Stack<Person> stack = new Stack<Person>(2);
+
+            MyStack<Person> myStack = new MyStack<Person>(2);
+            myStack.Push(p1);
+            myStack.Push(p2);
+
+            foreach (var p in myStack)
+            {
+                Console.WriteLine(p.Name);
+            }
+            Console.WriteLine(myStack[1].Age);
+            Person result = myStack.Pop();
+            Console.WriteLine(myStack.Length);
+            Console.WriteLine("Name:" + result.Name + " Age:" + result.Age);
+            foreach (var p in myStack)
+            {
+                Console.WriteLine(p.Name);
+            }
+            myStack.Pop();
+            Console.WriteLine(myStack.Length);
+            myStack.Dispose();
+
             Console.ReadKey();
         }
     }

@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Stack
+namespace Stack1
 {
     public class Product
     {
@@ -20,7 +21,42 @@ namespace Stack
         public static ConcurrentStack<Product> productSK = new ConcurrentStack<Product>();//无需考虑并发
         static void Main(string[] args)
         {
+            Stack st = new Stack();
 
+            st.Push('A');
+            st.Push('M');
+            st.Push('G');
+            st.Push('W');
+
+            Console.WriteLine("Current stack: ");
+            foreach (char c in st)
+            {
+                Console.Write(c + " ");
+            }
+            Console.WriteLine();
+
+            st.Push('V');
+            st.Push('H');
+            Console.WriteLine("The next poppable value in stack: {0}",
+            st.Peek());
+            Console.WriteLine("Current stack: ");
+            foreach (char c in st)
+            {
+                Console.Write(c + " ");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Removing values ");
+            st.Pop();
+            st.Pop();
+            st.Pop();
+
+            Console.WriteLine("Current stack: ");
+            foreach (char c in st)
+            {
+                Console.Write(c + " ");
+            }
+            Console.ReadKey();
         }
 
         public static void RuZhan() //定义一个入栈方法  先进后出
