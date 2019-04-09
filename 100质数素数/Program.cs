@@ -11,7 +11,7 @@ namespace _100质数素数
     {
         static void Main(string[] args)
         {
-            Test(15);
+            findContinueSequence1(9);
             Console.ReadKey();
             return;
             //A、B、C、D、E五名学生有有可能参加计算机竞赛
@@ -108,8 +108,10 @@ namespace _100质数素数
 
         //输入一个正数s，打印出所有和为s的连续正数序列（至少含有两个数字）。例如输入15，由于1+2+3+4+5=4+5+6=7+8=15，
         //所以打印出3个连续序列1 ~5，4~6和7 ~8
-        private static void Test(int k)
+        private static void findContinueSequence1(int k)
         {
+            if (k < 3) { return; }
+
             int temp = 0;
             for (int i = 1; i < k; i++)
             {
@@ -133,37 +135,37 @@ namespace _100质数素数
             }
         }
 
-        private static void findContinueSequence(int s)
-        {
-            Boolean flag = false;
-            //因为连续正数序列至少包含两个数，所以s大于等于3
-            if (s < 3)
-            {
-                return;
-            }
-            int start = 1;
-            int end = 2;
-            int mid = (1 + s) / 2;
-            int sum = start + end;
-            while (start < mid)
-            {
-                if (sum == s)
-                {
-                    printNum(start, end);
-                } while (sum > s && start < mid)
-                {
-                    sum -= start;
-                    start++;
-                    if (sum == s)
-                    {
-                        printNum(start, end);
-                    }
-                }
-                end++;
-                sum += end;
+        //private static void findContinueSequence(int s)
+        //{
+        //    Boolean flag = false;
+        //    //因为连续正数序列至少包含两个数，所以s大于等于3
+        //    if (s < 3)
+        //    {
+        //        return;
+        //    }
+        //    int start = 1;
+        //    int end = 2;
+        //    int mid = (1 + s) / 2;
+        //    int sum = start + end;
+        //    while (start < mid)
+        //    {
+        //        if (sum == s)
+        //        {
+        //            printNum(start, end);
+        //        } while (sum > s && start < mid)
+        //        {
+        //            sum -= start;
+        //            start++;
+        //            if (sum == s)
+        //            {
+        //                printNum(start, end);
+        //            }
+        //        }
+        //        end++;
+        //        sum += end;
 
-            }
-        }
+        //    }
+        //}
 
 
 
