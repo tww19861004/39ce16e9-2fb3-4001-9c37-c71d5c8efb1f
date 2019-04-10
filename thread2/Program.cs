@@ -23,7 +23,7 @@ namespace thread2
 
 
             //当前主线程是个前台线程,且不能修改为后台线程
-            Console.WriteLine("当前主线程,IsBackground="+Thread.CurrentThread.IsBackground);
+            Console.WriteLine("当前主线程,IsBackground="+Thread.CurrentThread.IsBackground + ",IsThreadPoolThread=" + Thread.CurrentThread.IsThreadPoolThread);
 
             //Thread创建的线程是前台线程
 
@@ -42,21 +42,26 @@ namespace thread2
             Thread th = new Thread(delegate ()
             {
                 Thread.Sleep(6000);
-                Console.WriteLine("start a new thread,IsBackground=" + Thread.CurrentThread.IsBackground);
+                Console.WriteLine("start a new thread,IsBackground=" + Thread.CurrentThread.IsBackground+ ",IsThreadPoolThread=" + Thread.CurrentThread.IsThreadPoolThread);
                 //File.AppendAllText(@"D:\1.txt", "Thread:"+System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + Environment.NewLine);
             });
-            th.IsBackground = false;
+            th.IsBackground = true;
             th.Start();
 
             Action<string> ac = (a) =>
               {
-                  Console.WriteLine("start a new action beginxxx,IsBackground=" + Thread.CurrentThread.IsBackground);
+                  Console.WriteLine("start a new action beginxxx,IsBackground=" + Thread.CurrentThread.IsBackground + ",IsThreadPoolThread=" + Thread.CurrentThread.IsThreadPoolThread);
                   //File.AppendAllText(@"D:\1.txt", "Action:"+System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + Environment.NewLine);
               };
             ac.BeginInvoke(null, null, null);
 
 
-            Console.WriteLine("main thread end,IsBackground=" + Thread.CurrentThread.IsBackground);
+            Task.Run(() =>
+            {
+                Console.WriteLine("start a new task ,IsBackground=" + Thread.CurrentThread.IsBackground + ",IsThreadPoolThread=" + Thread.CurrentThread.IsThreadPoolThread);
+            });
+
+            Console.WriteLine("main thread end,IsBackground=" + Thread.CurrentThread.IsBackground + ",IsThreadPoolThread=" + Thread.CurrentThread.IsThreadPoolThread);
             Console.ReadKey();
 
             //.NET线程池默认包含25个线程
