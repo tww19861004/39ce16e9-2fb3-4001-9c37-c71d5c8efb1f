@@ -46,6 +46,9 @@ namespace redis_protobuf1
     {
         static void Main(string[] args)
         {
+
+            HashTest();
+            return;
             SetAndGet();
             TestInteger();
             TestDouble();
@@ -61,6 +64,20 @@ namespace redis_protobuf1
             TestAsync();
             Console.ReadKey();
         }
+
+        public static void HashTest()
+        {
+            RedisStore.RedisCache.KeyDelete("201904102002");
+            Parallel.For(0, 1000, (i) =>
+              {
+                  RedisStore.RedisCache.HashIncrement("201904102002", "fiedname", 1);
+                  Thread.Sleep(20);
+              });
+            var list = RedisStore.RedisCache.HashGetAll("201904102002");
+            string s = string.Empty;
+
+        }
+
         public static void SetAndGet()
         {
             const string value = "abcdefg";
