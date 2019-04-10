@@ -29,6 +29,8 @@ namespace 主线程_前台线程_后台线程winform
             t1.IsBackground = false;
             t1.Name = "前台线程";
             t1.Start();
+
+            //所以应该使用前台线程执行确实想完成的任务，比如数据的拷贝等等.
         }
 
 
