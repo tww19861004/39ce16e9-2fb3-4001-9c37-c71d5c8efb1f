@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{52E6B9AB-DF87-4CD9-97F1-68613C47772D}</ProjectGuid>
+    <ProjectGuid>{F28129E6-0A6B-428B-B3E7-767C5BA6B2FC}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>链表list</RootNamespace>
-    <AssemblyName>链表list</AssemblyName>
+    <RootNamespace>双向链表</RootNamespace>
+    <AssemblyName>双向链表</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
