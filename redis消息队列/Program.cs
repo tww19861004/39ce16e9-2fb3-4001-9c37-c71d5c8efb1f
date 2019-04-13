@@ -19,6 +19,8 @@ namespace redis消息队列
             //Redis的列表是使用双向链表实现的，保存了头尾节点，所以在列表头尾两边插取元素都是非常快的
 
             //https://www.cnblogs.com/stopfalling/p/5375492.html
+
+            //https://www.cnblogs.com/cklovefan/p/7821862.html
         }
     }
 }
