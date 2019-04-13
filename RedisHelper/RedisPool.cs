@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Redis哨兵
+namespace RedisHelper
 {
-    class Program
+    class RedisPool
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }

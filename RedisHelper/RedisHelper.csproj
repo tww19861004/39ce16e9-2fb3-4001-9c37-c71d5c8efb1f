@@ -77,6 +77,8 @@
     <Compile Include="RedisClient.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RedisManager.cs" />
+    <Compile Include="RedisPool.cs" />
     <Compile Include="RedisStore.cs" />
   </ItemGroup>
   <ItemGroup>
