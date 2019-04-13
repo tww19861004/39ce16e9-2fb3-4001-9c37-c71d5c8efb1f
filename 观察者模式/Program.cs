@@ -25,7 +25,7 @@ namespace 观察者模式
         public event EventHandler<RunComplatedEventArgs> RunComplatedEvent;
         public void Run()
         {
-            Console.Write($"{name}发布了一个消息");
+            Console.WriteLine($"{name}发布了一个消息");
             System.Threading.Thread.Sleep(5000);
             if(RunComplatedEvent!=null)
             {
