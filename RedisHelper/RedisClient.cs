@@ -12,6 +12,8 @@ namespace RedisHelper
     {
         protected IDatabase Core;
 
+        //虽然ConnectionMultiplexer是实现了IDisposable接口的，但是我们基于重用的考虑，一般不需要去释放它
+
         protected ConnectionMultiplexer RedisConn;
         public RedisClient(ConnectionMultiplexer redisConn)
         {

@@ -17,13 +17,9 @@ namespace RedisHelper
         //但是使用new的方式又额外的带来了开销，各位大神 有没有什么好的方式可以解决这样矛盾的问题
 
         //ServiceStack.Redis 中GetClient()方法，只能拿到Master redis中获取连接，而拿不到slave 的readonly连接。
-        //这样 slave起到了冗余备份的作用，读的功能没有发挥出来，如果并发请求太多的话，则Redis的性能会有影响
+        //这样 slave起到了冗余备份的作用，读的功能没有发挥出来，如果并发请求太多的话，则Redis的性能会有影响 
 
-        private static readonly PooledRedisClientManager pool = null;
-        private static readonly string[] writeHosts = null;
-        private static readonly string[] readHosts = null;
-        public static int RedisMaxReadPool = int.Parse(ConfigurationManager.AppSettings["redis_max_read_pool"]);
-        public static int RedisMaxWritePool = int.Parse(ConfigurationManager.AppSettings["redis_max_write_pool"]);
+        //https://www.jb51.net/article/100446.htm
 
         //private static PooledRedisClientManager _prcm;
         /// <summary>
@@ -39,7 +35,7 @@ namespace RedisHelper
         /// </summary>
         private static void CreateManager()
         {
-
+            //只有ServiceStack.Redis有，当前redis客户端不支持
         }
 
         private static ConcurrentDictionary<string, RedisInfo> RedisInfoDict = new ConcurrentDictionary<string, RedisInfo>();
@@ -47,6 +43,13 @@ namespace RedisHelper
         private static ConnectionMultiplexer GetConnection(ConfigurationOptions config)
         {
             return ConnectionMultiplexer.Connect(config);
+        }
+
+        public static void InitRedis(string redisName, Func<List<string>> IpList, bool isNeedCache = false, int CacheTime = 300)
+        {
+            var nowipList = IpList();
+            nowipList = nowipList.OrderByDescending(z => z).ToList();
+
         }
 
         public static RedisClient GetClient(string RedisName)

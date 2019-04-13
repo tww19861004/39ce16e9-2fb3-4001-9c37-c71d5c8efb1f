@@ -161,9 +161,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stack", "Stack\Stack.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "csharp实现队列", "csharp实现队列\csharp实现队列.csproj", "{A9D19466-12A5-42D8-B7F0-2008BD6CFC17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "redis消息队列", "redis消息队列\redis消息队列.csproj", "{158E71D6-6D32-466F-92DE-603ED1908564}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "redis分布式锁", "redis消息队列\redis分布式锁.csproj", "{158E71D6-6D32-466F-92DE-603ED1908564}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisHelper", "RedisHelper\RedisHelper.csproj", "{FED75AE3-FD97-4958-AC1D-28DE0F0F716A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackExchangeRedisHelper", "RedisHelper\StackExchangeRedisHelper.csproj", "{FED75AE3-FD97-4958-AC1D-28DE0F0F716A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "双向链表", "双向链表\双向链表.csproj", "{F28129E6-0A6B-428B-B3E7-767C5BA6B2FC}"
 EndProject
