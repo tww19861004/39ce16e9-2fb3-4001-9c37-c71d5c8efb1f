@@ -1,82 +1,57 @@
 ﻿using StackExchange.Redis;
 using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace RedisHelper
 {
-    public class RedisConnection
+    public sealed class RedisSingletonConnection
     {
-        //　在 StackExchange.Redis 中最核心（中枢）的是 ConnectionMultiplexer 类，在所有调用之间它的实例对象应该被设计为在整个应用程序域中为共享和重用的，
-        // 并不应该为每一个操作都创建一个 ConnectionMultiplexer 对象实例，也就是说我们可以使用常见的单例模式进行创建。
-        // 虽然 ConnectionMultiplexer实现了 IDisposable 接口，但这并不意味着需要使用using 进行释放，因为创建一个 ConnectionMultiplexer 对象是十分昂贵的 ， 所以最好的是我们一直重用一个 ConnectionMultiplexer 对象。
-        //https://www.jb51.net/article/100446.htm
 
-        private string _ResisConnectionName;
-        private RedisConnection()
+        //在很多常见的情况下，StackExchange.Redis 将会自动的配置多个设置选项，包括服务器类型和版本，连接超时和主/从关系配置。可是有时候在Redis服务器这个命令是被禁止的。在这种情况下，提供更多的信息是非常有用的：
+        private static ConfigurationOptions configOptions = new ConfigurationOptions
         {
-            _ResisConnectionName = "default";
-        }
+            EndPoints =
+            {
+                { "127.0.0.1", 6379 }
+            },
+            CommandMap = CommandMap.Create(new HashSet<string>
+            {
+                // 排除几个命令
+                //"INFO", "CONFIG", "CLUSTER", "PING", "ECHO", "CLIENT"
+            }, available: false),
+            AllowAdmin = true,
+            Proxy = Proxy.Twemproxy,
+            Password = "12345",
+        };
 
-        private Lazy<ConnectionMultiplexer> _Connetion;
-        public ConnectionMultiplexer Connetion
-        {
-            get
-            {
-                return _Connetion.Value;
-            }
-        }
-
-        public RedisConnection(string resisConnectionName,string connectionString = "", ConfigurationOptions config = null)
-        {
-            _ResisConnectionName = resisConnectionName;
-            if(string.IsNullOrEmpty(connectionString) && config == null)
-            {
-                throw new ArgumentException("connectionString or config 必须有一个有值");
-            }
-            _Connetion = new Lazy<ConnectionMultiplexer>(() =>
-            {
-                if(!string.IsNullOrEmpty(connectionString))
+        private static readonly Lazy<ConnectionMultiplexer> LazyConnection = new Lazy<ConnectionMultiplexer>(
+            () =>
                 {
-                    ConnectionMultiplexer.Connect(connectionString);
+                    var connect = ConnectionMultiplexer.Connect(configOptions);
+                    //注册如下事件                    
+                    connect.ConnectionFailed += MuxerConnectionFailed;
+                    connect.ConnectionRestored += MuxerConnectionRestored;
+                    connect.ErrorMessage += MuxerErrorMessage;
+                    connect.ConfigurationChanged += MuxerConfigurationChanged;
+                    connect.HashSlotMoved += MuxerHashSlotMoved;
+                    connect.InternalError += MuxerInternalError;
+                    connect.ConfigurationChangedBroadcast += ConnMultiplexer_ConfigurationChangedBroadcast;
+                    return connect;
                 }
-                else
-                {
-                    ConnectionMultiplexer.Connect(config);
-                }
-                return null;
-            });
-        }                
+        , LazyThreadSafetyMode.ExecutionAndPublication);
 
-        private ConnectionMultiplexer CreateConnection(string connectionString)
+        private RedisSingletonConnection()
         {
-            var connect = ConnectionMultiplexer.Connect(connectionString);
-            RegisterConnectionEvent(connect);
-            return connect;
+            Console.WriteLine("Private RedisSingletonConnection Constructing");
         }
 
-        private ConnectionMultiplexer CreateConnection(ConfigurationOptions config)
-        {
-            var connect = ConnectionMultiplexer.Connect(config);
-            RegisterConnectionEvent(connect);
-            return connect;
-        }
+        public static ConnectionMultiplexer Connection => LazyConnection.Value;
 
-        private void RegisterConnectionEvent(ConnectionMultiplexer connect)
-        {
-            //注册如下事件
-            connect.ConnectionFailed += MuxerConnectionFailed;
-            connect.ConnectionRestored += MuxerConnectionRestored;
-            connect.ErrorMessage += MuxerErrorMessage;
-            connect.ConfigurationChanged += MuxerConfigurationChanged;
-            connect.HashSlotMoved += MuxerHashSlotMoved;
-            connect.InternalError += MuxerInternalError;
-            connect.ConfigurationChangedBroadcast += ConnMultiplexer_ConfigurationChangedBroadcast;
-        }
+        public static IDatabase Instance => Connection.GetDatabase();
 
         #region 事件
 

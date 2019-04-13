@@ -17,9 +17,7 @@ namespace RedisHelper
         //但是使用new的方式又额外的带来了开销，各位大神 有没有什么好的方式可以解决这样矛盾的问题
 
         //ServiceStack.Redis 中GetClient()方法，只能拿到Master redis中获取连接，而拿不到slave 的readonly连接。
-        //这样 slave起到了冗余备份的作用，读的功能没有发挥出来，如果并发请求太多的话，则Redis的性能会有影响 
-
-        //https://www.jb51.net/article/100446.htm
+        //这样 slave起到了冗余备份的作用，读的功能没有发挥出来，如果并发请求太多的话，则Redis的性能会有影响         
 
         //private static PooledRedisClientManager _prcm;
         /// <summary>

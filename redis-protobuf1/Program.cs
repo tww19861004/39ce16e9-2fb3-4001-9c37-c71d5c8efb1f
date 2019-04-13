@@ -18,8 +18,9 @@ namespace redis_protobuf1
         {
 
             HashTest();
-            return;
+            
             SetAndGet();
+            return;
             TestInteger();
             TestDouble();
             TestBool();
@@ -37,22 +38,23 @@ namespace redis_protobuf1
 
         public static void HashTest()
         {
-            RedisStore.RedisCache.KeyDelete("201904102002");
+            RedisSingletonConnection.Instance.KeyDelete("201904102002");
             Parallel.For(0, 1000, (i) =>
               {
-                  RedisStore.RedisCache.HashIncrement("201904102002", "fiedname", 1);
+                  RedisSingletonConnection.Instance.HashIncrement("201904102002", "fiedname", 1);
                   Thread.Sleep(20);
               });
-            var list = RedisStore.RedisCache.HashGetAll("201904102002");
+            var list = RedisSingletonConnection.Instance.HashGetAll("201904102002");
             string s = string.Empty;
 
+            Console.ReadKey();
         }
 
         public static void SetAndGet()
         {
             const string value = "abcdefg";
-            RedisStore.RedisCache.StringSet("mykey", value);
-            var val = RedisStore.RedisCache.StringGet("mykey");
+            RedisSingletonConnection.Instance.StringSet("mykey", value);
+            var val = RedisSingletonConnection.Instance.StringGet("mykey");
             Console.WriteLine(val);
         }
 
@@ -60,8 +62,8 @@ namespace redis_protobuf1
         public static void TestInteger()
         {
             const int num = 5;
-            RedisStore.RedisCache.StringSet("StackExchangeRedis_TestInteger", num);
-            var val = RedisStore.RedisCache.StringGet("StackExchangeRedis_TestInteger");            
+            RedisSingletonConnection.Instance.StringSet("StackExchangeRedis_TestInteger", num);
+            var val = RedisSingletonConnection.Instance.StringGet("StackExchangeRedis_TestInteger");            
             Console.WriteLine(val);
         }
 
@@ -69,8 +71,8 @@ namespace redis_protobuf1
         public static void TestDouble()
         {
             const double num = 5.34567;
-            RedisStore.RedisCache.StringSet("StackExchangeRedis_TestDouble", num);
-            var val = RedisStore.RedisCache.StringGet("StackExchangeRedis_TestDouble");
+            RedisSingletonConnection.Instance.StringSet("StackExchangeRedis_TestDouble", num);
+            var val = RedisSingletonConnection.Instance.StringGet("StackExchangeRedis_TestDouble");
             Console.WriteLine(val);
         }
 
@@ -78,8 +80,8 @@ namespace redis_protobuf1
         public static void TestBool()
         {
             const bool b = true;
-            RedisStore.RedisCache.StringSet("StackExchangeRedis_TestBoolT", b);
-            var val = RedisStore.RedisCache.StringGet("StackExchangeRedis_TestBoolT");
+            RedisSingletonConnection.Instance.StringSet("StackExchangeRedis_TestBoolT", b);
+            var val = RedisSingletonConnection.Instance.StringGet("StackExchangeRedis_TestBoolT");
             Console.WriteLine(val);
         }
 
@@ -196,16 +198,16 @@ namespace redis_protobuf1
 
         public static void TestSync()
         {
-            var aSync = RedisStore.RedisCache.StringGet("StackExchangeRedis_TestDouble");
-            var bSync = RedisStore.RedisCache.StringGet("StackExchangeRedis_TestInteger");
+            var aSync = RedisSingletonConnection.Instance.StringGet("StackExchangeRedis_TestDouble");
+            var bSync = RedisSingletonConnection.Instance.StringGet("StackExchangeRedis_TestInteger");
         }
 
         public static void TestAsync()
         {
-            var aPending = RedisStore.RedisCache.StringGetAsync("StackExchangeRedis_TestDouble");
-            var bPending = RedisStore.RedisCache.StringGetAsync("StackExchangeRedis_TestInteger");
-            var a = RedisStore.RedisCache.Wait(aPending);
-            var b = RedisStore.RedisCache.Wait(bPending);
+            var aPending = RedisSingletonConnection.Instance.StringGetAsync("StackExchangeRedis_TestDouble");
+            var bPending = RedisSingletonConnection.Instance.StringGetAsync("StackExchangeRedis_TestInteger");
+            var a = RedisSingletonConnection.Instance.Wait(aPending);
+            var b = RedisSingletonConnection.Instance.Wait(bPending);
         }
 
         //******************************
@@ -288,7 +290,7 @@ namespace redis_protobuf1
         {
             if (!string.IsNullOrWhiteSpace(key))
             {
-                return RedisStore.RedisCache.StringSet(key, DataToBytes<T>(value));
+                return RedisSingletonConnection.Instance.StringSet(key, DataToBytes<T>(value));
             }
             return false;
         }
@@ -299,7 +301,7 @@ namespace redis_protobuf1
             {
 
                 Console.WriteLine(DataToBytes<T>(value));
-                return RedisStore.RedisCache.StringSet(key, DataToBytes<T>(value));
+                return RedisSingletonConnection.Instance.StringSet(key, DataToBytes<T>(value));
             }
             return false;
         }
@@ -307,14 +309,14 @@ namespace redis_protobuf1
 
         public static T GetCache<T>(string key)
         {
-            byte[] val = RedisStore.RedisCache.StringGet(key);
+            byte[] val = RedisSingletonConnection.Instance.StringGet(key);
             MemoryStream stream = new MemoryStream(val, false);
             return Serializer.Deserialize<T>(stream);
         }
 
         public static bool DeleteFromCache(string key)
         {
-            return RedisStore.RedisCache.KeyDelete(key);
+            return RedisSingletonConnection.Instance.KeyDelete(key);
         }
 
         public bool DeleteKeysByPartOfName(string pattern)
