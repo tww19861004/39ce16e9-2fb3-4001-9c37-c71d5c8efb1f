@@ -65,7 +65,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "memcached1", "memcached1\me
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonLazy1", "SingletonLazy1\SingletonLazy1.csproj", "{7344089A-092D-45E3-9203-137BA7D2F1D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "redis集群", "redis集群1\redis集群.csproj", "{52FDBB78-6B97-4591-B85A-CBB2801DDAAD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "redis分布式锁1", "redis集群1\redis分布式锁1.csproj", "{52FDBB78-6B97-4591-B85A-CBB2801DDAAD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "redis-protobuf1", "redis-protobuf1\redis-protobuf1.csproj", "{AF218C9C-72D3-4DA7-AA27-060FBDA1A8B6}"
 EndProject
@@ -161,7 +161,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stack", "Stack\Stack.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "csharp实现队列", "csharp实现队列\csharp实现队列.csproj", "{A9D19466-12A5-42D8-B7F0-2008BD6CFC17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "redis分布式锁", "redis消息队列\redis分布式锁.csproj", "{158E71D6-6D32-466F-92DE-603ED1908564}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "redis消息队列", "redis消息队列\redis消息队列.csproj", "{158E71D6-6D32-466F-92DE-603ED1908564}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackExchangeRedisHelper", "RedisHelper\StackExchangeRedisHelper.csproj", "{FED75AE3-FD97-4958-AC1D-28DE0F0F716A}"
 EndProject

@@ -1,7 +1,9 @@
 ﻿using StackExchange.Redis;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -14,8 +16,8 @@ namespace RedisHelper
 
         //虽然ConnectionMultiplexer是实现了IDisposable接口的，但是我们基于重用的考虑，一般不需要去释放它
 
-        protected ConnectionMultiplexer RedisConn;
-        public RedisClient(ConnectionMultiplexer redisConn)
+        protected IConnectionMultiplexer RedisConn;
+        public RedisClient(IConnectionMultiplexer redisConn)
         {
             var redis = redisConn.GetDatabase();
             this.Core = redis;
@@ -25,7 +27,107 @@ namespace RedisHelper
             Set = new RedisSet(redis);
             Hash = new RedisHash(redis);
             Key = new RedisKey(redis);
+            Console.WriteLine("RedisClient");
         }
+
+        #region 发布订阅
+
+        /// <summary>
+        /// 序列化
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        private static byte[] Serialize(object obj)
+        {
+            if (obj == null)
+                return null;
+
+            var binaryFormatter = new BinaryFormatter();
+            using (var memoryStream = new MemoryStream())
+            {
+                binaryFormatter.Serialize(memoryStream, obj);
+                var data = memoryStream.ToArray();
+                return data;
+            }
+        }
+
+        /// <summary>
+        /// 订阅
+        /// </summary>
+        /// <param name="channel"></param>
+        /// <param name="handle"></param>
+        public void Subscribe(RedisChannel channel, Action<RedisChannel, RedisValue> handle)
+        {
+            var sub = RedisConn.GetSubscriber();
+            sub.Subscribe(channel, handle);
+        }
+
+        /// <summary>
+        /// 发布
+        /// </summary>
+        /// <param name="channel"></param>
+        /// <param name="message"></param>
+        /// <returns></returns>
+        public long Publish(RedisChannel channel, RedisValue message)
+        {
+            var sub = RedisConn.GetSubscriber();
+            return sub.Publish(channel, message);
+        }
+
+        /// <summary>
+        /// 发布（使用序列化）
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="channel"></param>
+        /// <param name="message"></param>
+        /// <returns></returns>
+        public long Publish<T>(RedisChannel channel, T message)
+        {
+            var sub = RedisConn.GetSubscriber();
+            return sub.Publish(channel, Serialize(message));
+        }
+
+        #region 发布订阅-async
+
+        /// <summary>
+        /// 订阅
+        /// </summary>
+        /// <param name="channel"></param>
+        /// <param name="handle"></param>
+        public async Task SubscribeAsync(RedisChannel channel, Action<RedisChannel, RedisValue> handle)
+        {
+            var sub = RedisConn.GetSubscriber();
+            await sub.SubscribeAsync(channel, handle);
+        }
+
+        /// <summary>
+        /// 发布
+        /// </summary>
+        /// <param name="channel"></param>
+        /// <param name="message"></param>
+        /// <returns></returns>
+        public async Task<long> PublishAsync(RedisChannel channel, RedisValue message)
+        {
+            var sub = RedisConn.GetSubscriber();
+            return await sub.PublishAsync(channel, message);
+        }
+
+        /// <summary>
+        /// 发布（使用序列化）
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="channel"></param>
+        /// <param name="message"></param>
+        /// <returns></returns>
+        public async Task<long> PublishAsync<T>(RedisChannel channel, T message)
+        {
+            var sub = RedisConn.GetSubscriber();
+            return await sub.PublishAsync(channel, Serialize(message));
+        }
+
+        #endregion 发布订阅-async
+
+        #endregion 发布订阅
 
         //~MyRedisClient()
         //{

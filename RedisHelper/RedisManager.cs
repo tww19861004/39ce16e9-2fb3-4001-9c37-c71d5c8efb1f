@@ -60,6 +60,17 @@ namespace RedisHelper
             RedisClient test1 = new RedisClient(redisConnection1.Connetion);
         }
 
+        public static void UnitTestSingleton()
+        {
+            RedisClient myRedisClient = null;
+            Parallel.For(0, 100, (i) =>
+            {
+                myRedisClient = new RedisClient(RedisSingletonConnection.Instance); 
+            });
+            Console.ReadKey();
+            
+        }
+
         public static void InitRedis(string redisName, Func<List<string>> IpList, bool isNeedCache = false, int CacheTime = 300)
         {
             RedisInfoDict.TryAdd(redisName, new RedisConnection(redisName, IpList()));

@@ -21,6 +21,11 @@ namespace redis消息队列
             //https://www.cnblogs.com/stopfalling/p/5375492.html
 
             //https://www.cnblogs.com/cklovefan/p/7821862.html
+
+            RedisClient myRedisClient = new RedisClient(RedisSingletonConnection.Instance);
+
+
+
         }
     }
 }
