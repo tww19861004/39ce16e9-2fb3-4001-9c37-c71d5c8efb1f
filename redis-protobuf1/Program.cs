@@ -104,35 +104,35 @@ namespace redis_protobuf1
         //}
 
 
-        //public static void TestProtobufNet()
-        //{
-        //    var ppl = new People()
-        //    {
-        //        ID = 1,
-        //        FirstName = "John",
-        //        LastName = "Doe",
-        //        Address = new AddressModel()
-        //        {
-        //            AptNumber = 56,
-        //            StreetAdress = "123 Main Street",
-        //            City = "Toronto",
-        //            State = "Ontario",
-        //            Country = "Canada"
-        //        }
-        //    };
-        //    using (var file = File.Create("person.bin"))
-        //    {
-        //        Serializer.Serialize<People>(file, ppl);
-        //    }
+        public static void TestProtobufNet()
+        {
+            var ppl = new People()
+            {
+                ID = 1,
+                FirstName = "John",
+                LastName = "Doe",
+                Address = new AddressModel()
+                {
+                    AptNumber = 56,
+                    StreetAdress = "123 Main Street",
+                    City = "Toronto",
+                    State = "Ontario",
+                    Country = "Canada"
+                }
+            };
+            using (var file = File.Create("person.bin"))
+            {
+                Serializer.Serialize<People>(file, ppl);
+            }
 
-        //    People newPerson;
-        //    using (var file = File.OpenRead("person.bin"))
-        //    {
-        //        newPerson = Serializer.Deserialize<People>(file);
-        //    }
-        //    Console.WriteLine(newPerson.Address.StreetAdress);
-        //    Console.WriteLine(newPerson.Address.Country + "==" + ppl.Address.Country);
-        //}
+            People newPerson;
+            using (var file = File.OpenRead("person.bin"))
+            {
+                newPerson = Serializer.Deserialize<People>(file);
+            }
+            Console.WriteLine(newPerson.Address.StreetAdress);
+            Console.WriteLine(newPerson.Address.Country + "==" + ppl.Address.Country);
+        }
 
 
         //public static void TestSerializedArray()
@@ -230,7 +230,7 @@ namespace redis_protobuf1
         //    Console.Write(ttl);
         //}
 
-        
+
         //public static void TestDeleteKeysByPartOfName()
         //{
         //    DeleteKeysByPartOfName("StackExchangeRedis_");
@@ -343,7 +343,7 @@ namespace redis_protobuf1
         {
             server.FlushDatabase();
         }*/
-        
+
 
     }
 }

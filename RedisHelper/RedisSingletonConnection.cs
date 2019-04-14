@@ -11,10 +11,10 @@ namespace RedisHelper
     public sealed class RedisSingletonConnection
     {
         private RedisSingletonConnection() { }
-        private static IConnectionMultiplexer _Instance;
+        private static ConnectionMultiplexer _Instance;
         private static readonly Object locker = new Object();
 
-        public static IConnectionMultiplexer Instance
+        public static ConnectionMultiplexer Instance
         {
             get
             {
@@ -32,7 +32,7 @@ namespace RedisHelper
             }
         }
 
-        private static IConnectionMultiplexer CreateConnection()
+        private static ConnectionMultiplexer CreateConnection()
         {
             //在很多常见的情况下，StackExchange.Redis 将会自动的配置多个设置选项，包括服务器类型和版本，连接超时和主/从关系配置。可是有时候在Redis服务器这个命令是被禁止的。在这种情况下，提供更多的信息是非常有用的：
             ConfigurationOptions configOptions = new ConfigurationOptions

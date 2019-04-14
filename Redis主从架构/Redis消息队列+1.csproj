@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{52FDBB78-6B97-4591-B85A-CBB2801DDAAD}</ProjectGuid>
+    <ProjectGuid>{A8398B9D-F414-4CCD-AD15-80739E693934}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>redis集群1</RootNamespace>
-    <AssemblyName>redis集群1</AssemblyName>
+    <RootNamespace>Redis主从架构</RootNamespace>
+    <AssemblyName>Redis主从架构</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -83,9 +83,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RedisHelper\StackExchangeRedisHelper.csproj">
-      <Project>{fed75ae3-fd97-4958-ac1d-28de0f0f716a}</Project>
+      <Project>{FED75AE3-FD97-4958-AC1D-28DE0F0F716A}</Project>
       <Name>StackExchangeRedisHelper</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="redis.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

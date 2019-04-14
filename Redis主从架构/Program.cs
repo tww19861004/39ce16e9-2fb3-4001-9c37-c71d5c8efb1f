@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RedisHelper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,17 +7,61 @@ using System.Threading.Tasks;
 
 namespace Redis主从架构
 {
+    /// <summary>
+    /// 标记此类为可序列号，保证此类的实体对象可以被序列化
+    /// </summary>
+    [Serializable]
+    public class ChatModels
+    {
+        /// <summary>
+        /// 用户id
+        /// </summary>
+        public string useId { get; set; }
+
+        /// <summary>
+        /// 对话内容
+        /// </summary>
+        public string chat { get; set; }
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
-            //Redis支持主从同步。数据可以从主服务器向任意数量的从服务器上同步，同步使用的是发布/订阅机制。
-            //redis提供了一个master,多个slave的服务
-            //主IP ：端口      192.168.0.103 6666
-            //从IP：端口       192.168.0.108 3333
-            //Windows 环境搭建Redis集群
-            //Redis集群主从复制（一主两从）
-            //主节点以写为主(可写也可以读)，从节点只能读不可写入！【读写分离场景】
+            //在程序终止或者类的实例被销毁的时候，请将订阅者实例注销掉，否则，在redis中一直存在这个订阅者
+
+            RedisClient myRedisClient = new RedisClient(RedisSingletonConnection.Instance);
+
+            Pub(myRedisClient);
+
+            Sub(myRedisClient);
+
+            Console.ReadKey();
         }
+
+        static void Pub(RedisClient myRedisClient)
+        {
+            Console.WriteLine("请输入要发布向哪个通道？");
+            var channel = Console.ReadLine();
+            
+            for (int i = 0; i < 2; i++)
+            {
+                myRedisClient.Publish(channel, i.ToString());
+            }
+
+        }
+
+        static void Sub(RedisClient myRedisClient)
+        {
+            Console.WriteLine("请输入您要订阅哪个通道的信息？");
+            var channelKey = Console.ReadLine();
+            myRedisClient.Subscribe(channelKey, (channel, message) =>
+            {
+                Console.WriteLine("接受到发布的内容为：" + message);
+            });
+            Console.WriteLine("您订阅的通道为：<< " + channelKey + " >> ! 请耐心等待消息的到来！！");
+        }
+
+
     }
 }
