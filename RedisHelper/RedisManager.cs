@@ -36,23 +36,47 @@ namespace RedisHelper
             //只有ServiceStack.Redis有，当前redis客户端不支持
         }
 
-        private static ConcurrentDictionary<string, RedisInfo> RedisInfoDict = new ConcurrentDictionary<string, RedisInfo>();
+        private static ConcurrentDictionary<string, RedisConnection> RedisInfoDict = new ConcurrentDictionary<string, RedisConnection>();
 
-        private static ConnectionMultiplexer GetConnection(ConfigurationOptions config)
+        public static void UnitTest()
         {
-            return ConnectionMultiplexer.Connect(config);
+            Parallel.For(0, 10, (i) =>
+              {
+                  InitRedis("redis链接名"+i.ToString(), () =>
+                   {
+                       return new List<string>() { "127.0.0.1:6379" };
+                   });
+              });
+            RedisConnection redisConnection = null;
+            for(int i=0;i<5;i++)
+            {
+                RedisInfoDict.TryGetValue("redis链接名"+i.ToString(), out redisConnection);
+                RedisClient test = new RedisClient(redisConnection.Connetion);
+            }            
+            //test.String.Incr("12345");
+            string str = Console.ReadLine();
+            RedisConnection redisConnection1 = null;
+            RedisInfoDict.TryGetValue("redis链接名", out redisConnection1);
+            RedisClient test1 = new RedisClient(redisConnection1.Connetion);
         }
 
         public static void InitRedis(string redisName, Func<List<string>> IpList, bool isNeedCache = false, int CacheTime = 300)
         {
-            var nowipList = IpList();
-            nowipList = nowipList.OrderByDescending(z => z).ToList();
-
-        }
+            RedisInfoDict.TryAdd(redisName, new RedisConnection(redisName, IpList()));
+        }        
 
         public static RedisClient GetClient(string RedisName)
         {
-            return null;
+            RedisConnection redisConnection = null;
+            RedisInfoDict.TryGetValue(RedisName, out redisConnection);
+            if(redisConnection == null)
+            {
+                return null;
+            }
+            else
+            {
+                return new RedisClient(redisConnection.Connetion);
+            }                
         }
     }
 

@@ -18,9 +18,8 @@ namespace redis_protobuf1
         {
 
             HashTest();
-            
-            SetAndGet();
             return;
+            SetAndGet();            
             TestInteger();
             TestDouble();
             TestBool();
@@ -38,6 +37,8 @@ namespace redis_protobuf1
 
         public static void HashTest()
         {
+            RedisManager.UnitTest();
+            return;
             RedisSingletonConnection.Instance.KeyDelete("201904102002");
             Parallel.For(0, 1000, (i) =>
               {
