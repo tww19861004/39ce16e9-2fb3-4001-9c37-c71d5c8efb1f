@@ -33,8 +33,6 @@ namespace 主线程_前台线程_后台线程winform
             //所以应该使用前台线程执行确实想完成的任务，比如数据的拷贝等等.
         }
 
-
-
         private void Say()
         {
             for (int i = 0; i < 10; i++)
