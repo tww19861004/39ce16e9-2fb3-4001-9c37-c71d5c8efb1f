@@ -20,6 +20,11 @@ namespace 二维数组
             string test1 = Newtonsoft.Json.JsonConvert.SerializeObject(test);
 
             int[][] test2 = Newtonsoft.Json.JsonConvert.DeserializeObject<int[][]>(test1);
+
+            int oatid = 1;
+            //找到ota小组
+            int[] find = test2.FirstOrDefault(r => r.Any(x => x == oatid));
+
         }
     }
 }
