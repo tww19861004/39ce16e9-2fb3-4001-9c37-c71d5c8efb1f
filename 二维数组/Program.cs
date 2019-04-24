@@ -18,6 +18,8 @@ namespace 二维数组
                 test[i] = temp.Select(r => Convert.ToInt32(r)).ToArray();
             }
             string test1 = Newtonsoft.Json.JsonConvert.SerializeObject(test);
+
+            int[][] test2 = Newtonsoft.Json.JsonConvert.DeserializeObject<int[][]>(test1);
         }
     }
 }
