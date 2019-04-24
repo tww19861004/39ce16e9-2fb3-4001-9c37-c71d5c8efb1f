@@ -181,6 +181,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Blazor", "Blazor", "{F84E2A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{6CC7621A-7084-4E8B-ACAA-5C88DE979E94}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "二维数组", "二维数组\二维数组.csproj", "{D50CC390-3EA0-4083-A4DA-5852695E8D16}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -455,6 +457,10 @@ Global
 		{C72CA02A-3058-4FC5-874C-34828FBE784B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C72CA02A-3058-4FC5-874C-34828FBE784B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C72CA02A-3058-4FC5-874C-34828FBE784B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D50CC390-3EA0-4083-A4DA-5852695E8D16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D50CC390-3EA0-4083-A4DA-5852695E8D16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D50CC390-3EA0-4083-A4DA-5852695E8D16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D50CC390-3EA0-4083-A4DA-5852695E8D16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
