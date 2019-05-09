@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Security.Cryptography;
+using System.Linq;
 
 namespace MD5_Test
 {
@@ -38,6 +39,9 @@ namespace MD5_Test
     {
         static void Main(string[] args)
         {
+            string ordernos = "3000054222,3000053719";
+            string str = $"WHERE orderno in ({string.Join(",", ordernos.Split(new char[] { ',', '，' }, StringSplitOptions.RemoveEmptyEntries).Select(r=>"'"+r+"'"))}) ";;
+
             DateTime now = DateTime.Now.AddDays(1);
             DateTime today2 = new DateTime(now.Year, now.Month, now.Day);
 
