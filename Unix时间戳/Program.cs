@@ -15,6 +15,10 @@ namespace Unix时间戳
             string date1 = LongDateTimeToDateTimeString(l1);
             string date2 = LongDateTimeToDateTimeString(l2);
             string date3 = "";
+
+            Console.WriteLine($"{l1},{GetTimeStamp()},{LongDateTimeToDateTimeString(l1)}是否已经过了当前时间{GetTimeStamp() > l1}");
+            Console.WriteLine($"{l2},{GetTimeStamp()},{LongDateTimeToDateTimeString(l2)}是否已经过了当前时间{GetTimeStamp() > l2}");
+
             Console.ReadKey();
         }
 
