@@ -195,6 +195,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.ZooKeeper的分布式锁"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManualResetEvent", "ManualResetEvent\ManualResetEvent.csproj", "{B2AB3062-5241-42BA-A023-EF486709DBCA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoResetEvent", "AutoResetEvent\AutoResetEvent.csproj", "{9CBB0594-C405-491C-937C-2E0E4F03EF83}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -489,6 +491,10 @@ Global
 		{B2AB3062-5241-42BA-A023-EF486709DBCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2AB3062-5241-42BA-A023-EF486709DBCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2AB3062-5241-42BA-A023-EF486709DBCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CBB0594-C405-491C-937C-2E0E4F03EF83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CBB0594-C405-491C-937C-2E0E4F03EF83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CBB0594-C405-491C-937C-2E0E4F03EF83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CBB0594-C405-491C-937C-2E0E4F03EF83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -565,6 +571,7 @@ Global
 		{6907BF08-BFE6-40DA-B74D-B5CC11E21BED} = {B76221DF-2B78-4573-BCCC-94B5845EA43C}
 		{0D48E402-33EB-4DBC-9EAC-2A6D0C71C1F5} = {B76221DF-2B78-4573-BCCC-94B5845EA43C}
 		{B2AB3062-5241-42BA-A023-EF486709DBCA} = {06D00F21-AA95-4DDB-A107-6F1F81EF9E2F}
+		{9CBB0594-C405-491C-937C-2E0E4F03EF83} = {06D00F21-AA95-4DDB-A107-6F1F81EF9E2F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {10FE627A-527C-4B00-A14E-FCEF6F4C6835}
