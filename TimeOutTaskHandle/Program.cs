@@ -53,17 +53,10 @@ namespace TimeOutTaskHandle
         {
             Task.Run(() =>
             {
-                try
-                {
-                    System.Threading.Thread.Sleep(1000);
-                    int i = 0;
-                    double j = 10 / i;
-                }
-                catch(Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }                
-            }).TimeoutAfter(TimeSpan.FromMilliseconds(2)).ContinueWith(r =>
+                System.Threading.Thread.Sleep(1000);
+                int i = 0;
+                double j = 10 / i;
+            }).TimeoutAfter(TimeSpan.FromMilliseconds(20)).ContinueWith(r =>
             {
                 if (r.Exception != null && r.Exception.InnerExceptions != null && r.Exception.InnerExceptions.Count > 0)
                 {
