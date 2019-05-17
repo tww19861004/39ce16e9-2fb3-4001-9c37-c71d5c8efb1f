@@ -16,8 +16,17 @@ namespace Async1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine($"方法:Main；Current Thread Id :{Thread.CurrentThread.ManagedThreadId},是否托管线程池：{Thread.CurrentThread.IsThreadPoolThread}");
-            Test();
+            Task.Run(()=>
+            {
+                int i = 0;
+                double j = 10 / i;
+            }).ContinueWith(r=>
+            {
+                if (r.Exception != null && r.Exception.InnerExceptions != null && r.Exception.InnerExceptions.Count > 0)
+                {
+
+                }
+            });
             Console.ReadKey(); 
         }
 

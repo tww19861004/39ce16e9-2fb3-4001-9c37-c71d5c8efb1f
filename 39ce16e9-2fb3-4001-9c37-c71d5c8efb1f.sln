@@ -29,7 +29,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestingDemo", "UnitTest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuncExpression1", "FuncExpression1\FuncExpression1.csproj", "{D54A2C66-9EE9-4594-B769-BB6F4C532B35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Async1", "Async1\Async1.csproj", "{1B57AF76-7FB9-4765-84D2-453C631AAA52}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1", "Async1\Task1.csproj", "{1B57AF76-7FB9-4765-84D2-453C631AAA52}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "thread1", "thread1\thread1.csproj", "{5DE06F69-2889-40AB-803F-F1596780236C}"
 EndProject
@@ -198,6 +198,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoResetEvent", "AutoResetEvent\AutoResetEvent.csproj", "{9CBB0594-C405-491C-937C-2E0E4F03EF83}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "时序数据库influxDB", "时序数据库influxDB", "{E1E3F95D-8156-483F-9FFB-3A79ACE423ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeOutTaskHandle", "TimeOutTaskHandle\TimeOutTaskHandle.csproj", "{F065E95C-C907-42B4-8660-A3E87ADCEF4C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -497,6 +499,10 @@ Global
 		{9CBB0594-C405-491C-937C-2E0E4F03EF83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CBB0594-C405-491C-937C-2E0E4F03EF83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CBB0594-C405-491C-937C-2E0E4F03EF83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F065E95C-C907-42B4-8660-A3E87ADCEF4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F065E95C-C907-42B4-8660-A3E87ADCEF4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F065E95C-C907-42B4-8660-A3E87ADCEF4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F065E95C-C907-42B4-8660-A3E87ADCEF4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -574,6 +580,7 @@ Global
 		{0D48E402-33EB-4DBC-9EAC-2A6D0C71C1F5} = {B76221DF-2B78-4573-BCCC-94B5845EA43C}
 		{B2AB3062-5241-42BA-A023-EF486709DBCA} = {06D00F21-AA95-4DDB-A107-6F1F81EF9E2F}
 		{9CBB0594-C405-491C-937C-2E0E4F03EF83} = {06D00F21-AA95-4DDB-A107-6F1F81EF9E2F}
+		{F065E95C-C907-42B4-8660-A3E87ADCEF4C} = {06D00F21-AA95-4DDB-A107-6F1F81EF9E2F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {10FE627A-527C-4B00-A14E-FCEF6F4C6835}
