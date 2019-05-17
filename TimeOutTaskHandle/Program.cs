@@ -40,6 +40,7 @@ namespace TimeOutTaskHandle
                 }
                 else
                 {
+                    timeoutCancellationTokenSource.Cancel();
                     throw new Exception("The operation has timed out.");
                     //throw new TimeoutException("The operation has timed out.");
                 }
