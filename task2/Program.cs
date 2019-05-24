@@ -10,8 +10,8 @@ namespace task2
     {
         static void Main(string[] args)
         {
-            Task<bool>[] tasks = new Task<bool>[3];
-            for(int i=0;i<3;i++)
+            Task<bool>[] tasks = new Task<bool>[4];
+            for(int i=0;i<4;i++)
             {
                 tasks[i] = new Task<bool>(
                 r =>
@@ -29,7 +29,7 @@ namespace task2
 
             }
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 4; i++)
             {
                 if(tasks[i].Exception!=null && tasks[i].Exception.InnerExceptions!=null && tasks[i].Exception.InnerExceptions.Count>0)
                 {
@@ -37,7 +37,7 @@ namespace task2
                 }
                 else
                 {
-                    Console.WriteLine($"task {i} executed success");
+                    Console.WriteLine($"task {i} executed success，task[{i}].Result={tasks[i].Result}");
                 }
             }
             Console.ReadKey();
@@ -46,6 +46,10 @@ namespace task2
 
         public static bool sendPromotionItem(Object obj)
         {
+            if((int)obj == 3)
+            {
+                return false;
+            }
             if((int)obj/2 == 0)
             {
                 throw new Exception($"{(int)obj} exception monitor");
