@@ -29,7 +29,7 @@ namespace asyncWinform
         {
 
             Show("Test.Before");
-            await Task.Run(() => { Thread.Sleep(2000); }).ConfigureAwait(true);
+            await Task.Run(() => { Thread.Sleep(2000);MessageBox.Show(Thread.CurrentThread.ManagedThreadId.ToString()); }).ConfigureAwait(true);
             Show("Test.After");//输出字符串和当前线程
 
         }
