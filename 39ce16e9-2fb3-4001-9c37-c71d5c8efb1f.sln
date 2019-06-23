@@ -223,6 +223,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "asyncConsole", "async3\asyn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "asyncWinform", "asyncWinform\asyncWinform.csproj", "{90114B68-C865-4D69-8F51-BBD92B2E0629}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "websocket", "websocket", "{C80983E3-D9C5-4DCB-8670-1244DF04716E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
