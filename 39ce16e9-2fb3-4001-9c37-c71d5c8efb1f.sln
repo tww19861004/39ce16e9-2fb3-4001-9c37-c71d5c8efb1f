@@ -225,6 +225,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "asyncWinform", "asyncWinfor
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "websocket", "websocket", "{C80983E3-D9C5-4DCB-8670-1244DF04716E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "http中间层协议", "http中间层协议\http中间层协议.csproj", "{591E5374-D575-4EC1-AE12-0FEAC8A392FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -563,6 +565,10 @@ Global
 		{90114B68-C865-4D69-8F51-BBD92B2E0629}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90114B68-C865-4D69-8F51-BBD92B2E0629}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90114B68-C865-4D69-8F51-BBD92B2E0629}.Release|Any CPU.Build.0 = Release|Any CPU
+		{591E5374-D575-4EC1-AE12-0FEAC8A392FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{591E5374-D575-4EC1-AE12-0FEAC8A392FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{591E5374-D575-4EC1-AE12-0FEAC8A392FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{591E5374-D575-4EC1-AE12-0FEAC8A392FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -649,6 +655,7 @@ Global
 		{2AFAB977-690E-4774-8C7D-8706FA90F837} = {06D00F21-AA95-4DDB-A107-6F1F81EF9E2F}
 		{83C5C6B3-651C-40EC-A145-D61B6328D082} = {06D00F21-AA95-4DDB-A107-6F1F81EF9E2F}
 		{90114B68-C865-4D69-8F51-BBD92B2E0629} = {06D00F21-AA95-4DDB-A107-6F1F81EF9E2F}
+		{591E5374-D575-4EC1-AE12-0FEAC8A392FC} = {46A049A1-36DA-4444-BAC6-7F142D3C3D53}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {10FE627A-527C-4B00-A14E-FCEF6F4C6835}
