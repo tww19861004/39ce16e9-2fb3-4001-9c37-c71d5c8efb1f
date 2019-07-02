@@ -227,6 +227,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "websocket", "websocket", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "http中间层协议", "http中间层协议\http中间层协议.csproj", "{591E5374-D575-4EC1-AE12-0FEAC8A392FC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kafka", "Kafka", "{DBC118F2-CB02-49D3-8FF1-75404D0B1624}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
