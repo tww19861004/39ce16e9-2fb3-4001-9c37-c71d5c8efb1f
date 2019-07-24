@@ -17,14 +17,17 @@ namespace redis_protobuf1
         static void Main(string[] args)
         {
             RedisClient myRedisClient = null;
-            Parallel.For(0, 1, (i) =>
+            Parallel.For(0, 2, (i) =>
             {
                 myRedisClient = new RedisClient(RedisSingletonConnection.Instance);
             });
             myRedisClient.Key.KeyDelete("tww");
             myRedisClient.String.Incr("tww");
+            
             string str = myRedisClient.String.Get("tww");
             //HashTest();
+            Console.WriteLine(str);
+            Console.ReadLine();
             return;
             //SetAndGet();            
             //TestInteger();
