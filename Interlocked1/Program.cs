@@ -34,10 +34,21 @@ namespace Interlocked1
 
         static void Main(string[] args)
         {
+            int refCount = 0;
             Parallel.For(0, 10, (n) =>
               {
-                  ExactlyOnceMethod();
+                  Console.WriteLine($"n={n},refCount={refCount},Interlocked.Increment(ref refCount)={Interlocked.Increment(ref refCount)},refCount={refCount}");
               });
+            Console.WriteLine("--------------------------------------------------------------");
+            Parallel.For(0, 10, (n) =>
+            {
+                Console.WriteLine($"n={n},refCount={refCount},Interlocked.Decrement(ref refCount)={Interlocked.Decrement(ref refCount)},refCount={refCount}");
+            });
+
+            //Parallel.For(0, 10, (n) =>
+            //  {
+            //      ExactlyOnceMethod();
+            //  });
             Console.ReadKey();
         }
     }
