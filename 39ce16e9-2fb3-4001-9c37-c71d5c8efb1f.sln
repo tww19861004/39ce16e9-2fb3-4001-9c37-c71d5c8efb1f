@@ -254,6 +254,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interlocked2-AddRef-Release
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Disposable1", "Disposable1\Disposable1.csproj", "{14A5B5C7-8271-4D3A-A15B-BE1C74769BAB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Toolkit.Win32.UI.Controls1", "Microsoft.Toolkit.Win32.UI.Controls1\Microsoft.Toolkit.Win32.UI.Controls1.csproj", "{E3B203A1-9023-4184-BF3F-D98ABCFEC1B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -632,6 +634,10 @@ Global
 		{14A5B5C7-8271-4D3A-A15B-BE1C74769BAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14A5B5C7-8271-4D3A-A15B-BE1C74769BAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14A5B5C7-8271-4D3A-A15B-BE1C74769BAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3B203A1-9023-4184-BF3F-D98ABCFEC1B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3B203A1-9023-4184-BF3F-D98ABCFEC1B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3B203A1-9023-4184-BF3F-D98ABCFEC1B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3B203A1-9023-4184-BF3F-D98ABCFEC1B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -730,6 +736,7 @@ Global
 		{936D8E64-2243-472A-8F5A-2513C987AE2A} = {C8CECB17-CC81-48D3-B1E1-121BF9BBCD71}
 		{A2F728AB-7CA5-4544-BDF6-583112847FC0} = {26A84148-A4F6-4F94-A5EE-BB94908CABA3}
 		{14A5B5C7-8271-4D3A-A15B-BE1C74769BAB} = {26A84148-A4F6-4F94-A5EE-BB94908CABA3}
+		{E3B203A1-9023-4184-BF3F-D98ABCFEC1B2} = {7746D0A8-A4C3-4E32-89A4-F609053653BC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {10FE627A-527C-4B00-A14E-FCEF6F4C6835}
