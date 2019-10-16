@@ -258,6 +258,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Toolkit.Win32.UI.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "newtonsoftdemo2", "newtonsoftdemo2\newtonsoftdemo2.csproj", "{F31BFFBE-BCE5-4D18-AA53-0D2E8C3ED12A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linux守护进程", "Linux守护进程\Linux守护进程.csproj", "{ADA12EF2-91DB-47A6-AF55-1156F6546E47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -644,6 +646,10 @@ Global
 		{F31BFFBE-BCE5-4D18-AA53-0D2E8C3ED12A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F31BFFBE-BCE5-4D18-AA53-0D2E8C3ED12A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F31BFFBE-BCE5-4D18-AA53-0D2E8C3ED12A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADA12EF2-91DB-47A6-AF55-1156F6546E47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADA12EF2-91DB-47A6-AF55-1156F6546E47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADA12EF2-91DB-47A6-AF55-1156F6546E47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADA12EF2-91DB-47A6-AF55-1156F6546E47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
