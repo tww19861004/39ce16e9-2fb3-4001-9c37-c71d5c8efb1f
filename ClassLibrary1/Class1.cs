@@ -9,7 +9,8 @@ namespace ClassLibrary1
     public class Class1
     {
         public override string ToString()
-        {            
+        {
+            base.ToString();
             return "gang";
         }
     }
