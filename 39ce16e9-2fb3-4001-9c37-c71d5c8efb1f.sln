@@ -266,6 +266,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AssemblyResolve-Demo", "Ass
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{FA28B78B-8675-4AD2-8C53-C496B0480754}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Websocket-", "Websocket-", "{59CC7A08-5631-40ED-86B8-A5B43CC15A99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopoWebSocket", "TopoWebSocket\TopoWebSocket.csproj", "{88511964-0753-4FB9-950B-CA5D79B18205}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -664,6 +668,10 @@ Global
 		{FA28B78B-8675-4AD2-8C53-C496B0480754}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA28B78B-8675-4AD2-8C53-C496B0480754}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA28B78B-8675-4AD2-8C53-C496B0480754}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88511964-0753-4FB9-950B-CA5D79B18205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88511964-0753-4FB9-950B-CA5D79B18205}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88511964-0753-4FB9-950B-CA5D79B18205}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88511964-0753-4FB9-950B-CA5D79B18205}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -765,6 +773,7 @@ Global
 		{E3B203A1-9023-4184-BF3F-D98ABCFEC1B2} = {7746D0A8-A4C3-4E32-89A4-F609053653BC}
 		{139D0E4D-0A9E-4DB8-96C1-102405142AE5} = {5324EE58-3A97-4F74-AFAE-3F2049D34D29}
 		{FA28B78B-8675-4AD2-8C53-C496B0480754} = {5324EE58-3A97-4F74-AFAE-3F2049D34D29}
+		{88511964-0753-4FB9-950B-CA5D79B18205} = {59CC7A08-5631-40ED-86B8-A5B43CC15A99}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {10FE627A-527C-4B00-A14E-FCEF6F4C6835}
