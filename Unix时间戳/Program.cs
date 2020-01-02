@@ -27,6 +27,8 @@ namespace Unix时间戳
             Console.WriteLine($"reg.IsMatch({number})={reg.IsMatch(number)}");
             number = "v6053";
             Console.WriteLine($"reg.IsMatch({number})={reg.IsMatch(number)}");
+            number = "6053v";
+            Console.WriteLine($"reg.IsMatch({number})={reg.IsMatch(number)}");
             if (!reg.IsMatch(number))
             {
                 
