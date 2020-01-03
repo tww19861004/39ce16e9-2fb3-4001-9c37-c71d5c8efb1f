@@ -12,22 +12,16 @@ namespace Unix时间戳
         static void Main(string[] args)
         {
             string number = "V6053";
-            Regex reg = new Regex("^[vV][0-9]{4}$");//必须以V或者v开头，数字4位
-            number = "V60531";
+            Regex reg = new Regex("^[vV][0-9]{4,6}$");//必须以V或者v开头，数字4位
+            number = "v123";
             Console.WriteLine($"reg.IsMatch({number})={reg.IsMatch(number)}");
-            number = "Vv60531";
+            number = "v1234";
             Console.WriteLine($"reg.IsMatch({number})={reg.IsMatch(number)}");
-            number = "5V60531";
+            number = "v12345";
             Console.WriteLine($"reg.IsMatch({number})={reg.IsMatch(number)}");
-            number = "-V60531";
+            number = "v123456";
             Console.WriteLine($"reg.IsMatch({number})={reg.IsMatch(number)}");
-            number = " V60531";
-            Console.WriteLine($"reg.IsMatch({number})={reg.IsMatch(number)}");
-            number = "v60531";
-            Console.WriteLine($"reg.IsMatch({number})={reg.IsMatch(number)}");
-            number = "v6053";
-            Console.WriteLine($"reg.IsMatch({number})={reg.IsMatch(number)}");
-            number = "6053v";
+            number = "v1234567";
             Console.WriteLine($"reg.IsMatch({number})={reg.IsMatch(number)}");
             if (!reg.IsMatch(number))
             {
