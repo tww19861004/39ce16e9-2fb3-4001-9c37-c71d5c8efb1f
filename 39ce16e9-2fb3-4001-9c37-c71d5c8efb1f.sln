@@ -274,6 +274,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Linq", "Linq", "{25370D9A-8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "baselinq", "baselinq\baselinq.csproj", "{8E619299-B208-4F6A-86FD-817996BE9112}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task.DelayThread.Sleep", "Task.DelayThread.Sleep\Task.DelayThread.Sleep.csproj", "{3F1FE8E1-FE9E-446C-9011-16D463B0A7EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -680,6 +682,10 @@ Global
 		{8E619299-B208-4F6A-86FD-817996BE9112}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E619299-B208-4F6A-86FD-817996BE9112}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E619299-B208-4F6A-86FD-817996BE9112}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F1FE8E1-FE9E-446C-9011-16D463B0A7EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F1FE8E1-FE9E-446C-9011-16D463B0A7EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F1FE8E1-FE9E-446C-9011-16D463B0A7EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F1FE8E1-FE9E-446C-9011-16D463B0A7EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -783,6 +789,7 @@ Global
 		{FA28B78B-8675-4AD2-8C53-C496B0480754} = {5324EE58-3A97-4F74-AFAE-3F2049D34D29}
 		{88511964-0753-4FB9-950B-CA5D79B18205} = {59CC7A08-5631-40ED-86B8-A5B43CC15A99}
 		{8E619299-B208-4F6A-86FD-817996BE9112} = {25370D9A-8B6C-40BF-A663-3D450177A193}
+		{3F1FE8E1-FE9E-446C-9011-16D463B0A7EE} = {06D00F21-AA95-4DDB-A107-6F1F81EF9E2F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {10FE627A-527C-4B00-A14E-FCEF6F4C6835}
