@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Unix时间戳
@@ -10,14 +11,22 @@ namespace Unix时间戳
     {
         static void Main(string[] args)
         {
-            long l1 = 1546271704000;
-            long l2 = 1557451556000;
-            string date1 = LongDateTimeToDateTimeString(l1);
-            string date2 = LongDateTimeToDateTimeString(l2);
-            string date3 = "";
-
-            Console.WriteLine($"{l1},{GetTimeStamp()},{LongDateTimeToDateTimeString(l1)}是否已经过了当前时间{GetTimeStamp() > l1}");
-            Console.WriteLine($"{l2},{GetTimeStamp()},{LongDateTimeToDateTimeString(l2)}是否已经过了当前时间{GetTimeStamp() > l2}");
+            string number = "V6053";
+            Regex reg = new Regex("^[vV][0-9]{4,6}$");//必须以V或者v开头，数字4位
+            number = "v123";
+            Console.WriteLine($"reg.IsMatch({number})={reg.IsMatch(number)}");
+            number = "v1234";
+            Console.WriteLine($"reg.IsMatch({number})={reg.IsMatch(number)}");
+            number = "v12345";
+            Console.WriteLine($"reg.IsMatch({number})={reg.IsMatch(number)}");
+            number = "v123456";
+            Console.WriteLine($"reg.IsMatch({number})={reg.IsMatch(number)}");
+            number = "v1234567";
+            Console.WriteLine($"reg.IsMatch({number})={reg.IsMatch(number)}");
+            if (!reg.IsMatch(number))
+            {
+                
+            }
 
             Console.ReadKey();
         }
