@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿
+
+
 
 namespace Unix时间戳
 {
@@ -25,7 +22,7 @@ namespace Unix时间戳
             Console.WriteLine($"reg.IsMatch({number})={reg.IsMatch(number)}");
             if (!reg.IsMatch(number))
             {
-                
+
             }
 
             Console.ReadKey();
