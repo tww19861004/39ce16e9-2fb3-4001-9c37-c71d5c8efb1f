@@ -2,28 +2,22 @@
 
 
 
+using System;
+using System.Text.RegularExpressions;
+
 namespace Unix时间戳
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string number = "V6053";
-            Regex reg = new Regex("^[vV][0-9]{4,6}$");//必须以V或者v开头，数字4位
-            number = "v123";
-            Console.WriteLine($"reg.IsMatch({number})={reg.IsMatch(number)}");
-            number = "v1234";
-            Console.WriteLine($"reg.IsMatch({number})={reg.IsMatch(number)}");
-            number = "v12345";
-            Console.WriteLine($"reg.IsMatch({number})={reg.IsMatch(number)}");
-            number = "v123456";
-            Console.WriteLine($"reg.IsMatch({number})={reg.IsMatch(number)}");
-            number = "v1234567";
-            Console.WriteLine($"reg.IsMatch({number})={reg.IsMatch(number)}");
-            if (!reg.IsMatch(number))
+            long cardNo = 0L;
+            long.TryParse("", out cardNo);
+            if (cardNo <= 0)
             {
-
+                return;
             }
+
 
             Console.ReadKey();
         }
